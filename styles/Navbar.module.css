@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+}
+
+.drawer {
+    flex-shrink: 0;
+}
+
+.toolbar {
+    padding: 0;
+}
+
+.image {
+    margin: 2.5rem 0 5rem 0;
+}
+
+.btn {
+    text-align: center;
+    border-top: solid 1px rgba(255, 255, 255, 0.2);
+    padding: 1rem 0 1rem 0;
+}
+
+.text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hamburger {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: rgba(255, 255, 255, 0.5)
+}
