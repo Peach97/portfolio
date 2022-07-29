@@ -16,6 +16,7 @@ import styles from "../../styles/Navbar.module.css";
 import logo from "../../public/images/logo.png";
 import { Twirl as Hamburger } from "hamburger-react";
 import { theme } from "../../pages/_app";
+import ButtonGroup from "./ButtonGroup";
 
 const links = ["Home", "Works", "About", "Contact"];
 
@@ -52,7 +53,7 @@ function DrawerComp() {
           className={styles.drawer}
           sx={{
             "& .MuiDrawer-paper": {
-              bgcolor: "#53535350",
+              bgcolor: "#53535375",
               alignItems: "center",
               width: "10rem",
             },
@@ -73,6 +74,7 @@ function DrawerComp() {
                   </ListItemButton>
                 </ListItem>
               ))}
+              <ButtonGroup />
             </List>
             <Divider />
           </Toolbar>

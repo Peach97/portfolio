@@ -2,7 +2,12 @@ import "../styles/globals.css";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 
-export const theme = createTheme({});
+export const theme = createTheme({
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(","),
+  },
+});
+//Montserrat Font Family global
 
 function MyApp({ Component, pageProps }) {
   return (
