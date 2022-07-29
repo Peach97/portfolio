@@ -7,11 +7,7 @@ import DrawerComp from "./Drawer";
 const links = ["Home", "Works", "About", "Contact"];
 
 function Navbar() {
-  return (
-    <DrawerComp />
-    // <Box className={styles.container}>
-    // </Box>
-  );
+  return <DrawerComp />;
 }
 
 export default Navbar;

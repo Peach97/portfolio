@@ -1,0 +1,48 @@
+.bottomDrawerContainer {
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: fit-content;
+    border: 1px solid #7A33ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.drawer {
+    background-color: transparent;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.image {
+    width: 100%;
+    background-color: black;
+
+}
+
+.btn {
+    border-top: solid 1px #ffffff33;
+    padding: 1rem 0 1rem 0;
+}
+
+.text {
+    text-align: center;
+    align-items: center;
+    font-size: large;
+}
+
+.btn:hover {
+    color: #7A33ED
+}
