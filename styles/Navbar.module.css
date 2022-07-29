@@ -10,8 +10,8 @@
     padding: 0;
 }
 
-.image {
-    margin: 2.5rem 0 2.5rem 0;
+.imageContainer {
+    margin: 2.5rem 0 10rem 0;
 }
 
 .btn {
@@ -41,5 +41,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
 
+.text:hover {
+
+    color: #7A33ED
 }
