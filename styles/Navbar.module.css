@@ -11,7 +11,7 @@
 }
 
 .image {
-    margin: 2.5rem 0 5rem 0;
+    margin: 2.5rem 0 2.5rem 0;
 }
 
 .btn {
@@ -29,4 +29,17 @@
     top: 1.5rem;
     right: 1.5rem;
     color: rgba(255, 255, 255, 0.5)
+}
+
+.iconBtn {
+    width: 32px;
+    height: 32px;
+    margin: 0.5rem
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }

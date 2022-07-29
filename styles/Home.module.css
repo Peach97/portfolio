@@ -4,7 +4,14 @@
   width: 100%;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
+}
+
+.header {
+  margin: 0 0 0 10vw;
 }
 
 .down {
@@ -14,13 +21,15 @@
   transform: translateX(-50%);
 }
 
-.header {}
 
 .background {
   z-index: -1;
   background-image: url("../public/images/landing-page.png");
   height: 100vh;
+  width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+
 }
