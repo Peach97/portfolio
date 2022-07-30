@@ -9,16 +9,6 @@ export const particlesConfig = {
     repeat: "",
     size: "",
   },
-  backgroundMask: {
-    composite: "destination-out",
-    cover: {
-      color: {
-        value: "#fff",
-      },
-      opacity: 0,
-    },
-    enable: false,
-  },
   fullScreen: {
     enable: true,
     zIndex: -1,

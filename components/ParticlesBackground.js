@@ -2,9 +2,8 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
 //import { loadFull } from "tsparticles"; // loads tsparticles
 import { useCallback, useMemo } from "react";
+import styles from "../styles/Home.module.css";
 
-// tsParticles Repository: https://github.com/matteobruni/tsparticles
-// tsParticles Website: https://particles.js.org/
 const ParticlesComponent = (props) => {
   // using useMemo is not mandatory, but it's recommended since this value can be memoized if static
   const options = useMemo(() => {
@@ -80,7 +79,9 @@ const ParticlesComponent = (props) => {
   }, []);
 
   // setting an id can be useful for identifying the right particles component, this is useful for multiple instances or reusable components
-  return <Particles id={props.id} init={particlesInit} options={options} />;
+  return (
+    <Particles id={styles.tsparticles} init={particlesInit} options={options} />
+  );
 };
 
 export default ParticlesComponent;
