@@ -1,6 +1,11 @@
 import "../styles/globals.css";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import Router from "next/router";
+import { useState, useEffect } from "react";
+import LoaderConfig from "../components/Loader/loader-config";
+import { useRouter } from "next/router";
+import { Box } from "@mui/system";
 
 export const theme = createTheme({
   palette: {
@@ -34,10 +39,36 @@ theme.typography.h1 = {
 };
 //media queries for h1/h3
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const handleStart = (url) => url !== router.asPath && setLoading(true);
+    const handleComplete = (url) =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 4000);
+
+    // setLoading(false) &&
+    // url === router.asPath && setTimeout(() => setLoading(false), 5000);
+    router.events.on("routeChangeStart", handleStart());
+    router.events.on("routeChangeComplete", handleComplete());
+    router.events.on("routeChangeError", handleComplete());
+    return () => {
+      router.events.off("routeChangeStart", handleStart());
+      router.events.off("routeChangeComplete", handleComplete());
+      router.events.off("routeChangeError", handleComplete());
+    };
+  }, []);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      {loading && <LoaderConfig />}
+      <>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </>
+    </>
   );
 }
 

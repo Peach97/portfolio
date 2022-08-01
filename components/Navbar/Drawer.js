@@ -18,11 +18,20 @@ import { Twirl as Hamburger } from "hamburger-react";
 import { theme } from "../../pages/_app";
 import ButtonGroup from "./ButtonGroup";
 import MinimizedDrawer from "./MinimizedDrawer";
+import { useRouter } from "next/router";
+// utilizing nextjs router
 
-export const links = ["Home", "Works", "About", "Contact"];
+export const links = [
+  { title: "Home" },
+  { title: "Works", route: "/works" },
+  { title: "About" },
+  { title: "Contact" },
+];
 //navbar links
 
 function DrawerComp() {
+  //lazy loader useState
+  const router = useRouter();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   console.log(matches);
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -79,8 +88,11 @@ function DrawerComp() {
               <Divider />
               {links.map((link, index) => (
                 <ListItem key={index} disablePadding>
-                  <ListItemButton className={styles.btn}>
-                    <ListItemText className={styles.text} primary={link} />
+                  <ListItemButton className={styles.btn} href={link.route}>
+                    <ListItemText
+                      className={styles.text}
+                      primary={link.title}
+                    />
                   </ListItemButton>
                 </ListItem>
               ))}
