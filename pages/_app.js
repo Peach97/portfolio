@@ -5,6 +5,7 @@ import Router from "next/router";
 import { useState, useEffect } from "react";
 import LoaderConfig from "../components/Loader/loader-config";
 import { useRouter } from "next/router";
+import Navbar from "../components/Navbar/Navbar";
 import { Box } from "@mui/system";
 
 export const theme = createTheme({
@@ -47,7 +48,6 @@ function MyApp({ Component, pageProps }) {
       setTimeout(() => {
         setLoading(false);
       }, 4000);
-
     // setLoading(false) &&
     // url === router.asPath && setTimeout(() => setLoading(false), 5000);
     router.events.on("routeChangeStart", handleStart());
@@ -59,12 +59,14 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeError", handleComplete());
     };
   }, []);
+  //runs whenever a router event occurs
 
   return (
     <>
       {loading && <LoaderConfig />}
       <>
         <ThemeProvider theme={theme}>
+          <Navbar />
           <Component {...pageProps} />
         </ThemeProvider>
       </>

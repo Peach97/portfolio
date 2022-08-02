@@ -19,19 +19,20 @@ import { theme } from "../../pages/_app";
 import ButtonGroup from "./ButtonGroup";
 import MinimizedDrawer from "./MinimizedDrawer";
 import { useRouter } from "next/router";
+import { withRouter } from "next/router";
 // utilizing nextjs router
 
 export const links = [
-  { title: "Home" },
-  { title: "Works", route: "/works" },
+  { title: "Home", route: `/` },
+  { title: "Works", route: `/works` },
   { title: "About" },
   { title: "Contact" },
 ];
 //navbar links
 
 function DrawerComp() {
-  //lazy loader useState
   const router = useRouter();
+  //lazy loader useState
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   console.log(matches);
   const [openDrawer, setOpenDrawer] = useState(false);
@@ -88,7 +89,11 @@ function DrawerComp() {
               <Divider />
               {links.map((link, index) => (
                 <ListItem key={index} disablePadding>
-                  <ListItemButton className={styles.btn} href={link.route}>
+                  <ListItemButton
+                    href={link.route}
+                    // router.push(`link.route`, undefined, { shallow: true })
+                    className={styles.btn}
+                  >
                     <ListItemText
                       className={styles.text}
                       primary={link.title}

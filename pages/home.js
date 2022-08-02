@@ -22,7 +22,6 @@ export default function HeroSection() {
         <Box className={styles.background} />
         <Heading />
         <Particles id={styles.tsparticles} />
-        <Navbar />
         <IconButton onClick={scrollTo} className={styles.down}>
           <motion.div
             transition={bounceTransition}
