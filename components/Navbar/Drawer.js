@@ -11,6 +11,8 @@ import {
   Toolbar,
   useMediaQuery,
   IconButton,
+  Link,
+  Typography,
 } from "@mui/material";
 import styles from "../../styles/Navbar.module.css";
 import logo from "../../public/images/logo.png";
@@ -20,17 +22,19 @@ import ButtonGroup from "./ButtonGroup";
 import MinimizedDrawer from "./MinimizedDrawer";
 import { useRouter } from "next/router";
 import { withRouter } from "next/router";
+import NextLink from "next/link";
+import StyledLink from "../StyledComponents/Link.js";
 // utilizing nextjs router
 
 export const links = [
-  { title: "Home", route: `/` },
-  { title: "Works", route: `/works` },
+  { title: "Home", path: "/" },
+  { title: "Works", path: "/works" },
   { title: "About" },
   { title: "Contact" },
 ];
 //navbar links
 
-function DrawerComp() {
+function DrawerComp({ path }) {
   const router = useRouter();
   //lazy loader useState
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -39,7 +43,7 @@ function DrawerComp() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <>
       {matches ? (
         <>
           <IconButton
@@ -90,14 +94,15 @@ function DrawerComp() {
               {links.map((link, index) => (
                 <ListItem key={index} disablePadding>
                   <ListItemButton
-                    href={link.route}
+                    LinkComponent={NextLink}
+                    path={path}
+                    href={link.path}
                     // router.push(`link.route`, undefined, { shallow: true })
                     className={styles.btn}
                   >
-                    <ListItemText
-                      className={styles.text}
-                      primary={link.title}
-                    />
+                    <Typography className={styles.text}>
+                      {link.title}
+                    </Typography>
                   </ListItemButton>
                 </ListItem>
               ))}
@@ -107,7 +112,7 @@ function DrawerComp() {
           </Toolbar>
         </Drawer>
       )}
-    </div>
+    </>
   );
 }
 
