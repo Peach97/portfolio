@@ -18,18 +18,18 @@ export default function HeroSection() {
     });
   }
   return (
-    <Box className={styles.header}>
-      <Heading />
-      <Particles id={styles.tsparticles} />
-
-      <IconButton onClick={scrollTo} className={styles.down}>
+    <Box className={styles.headerContainer}>
+      <Box className={styles.header}>
+        <Heading />
+        {/* <IconButton onClick={scrollTo} className={styles.down}>
         <motion.div
           transition={bounceTransition}
           animate={{ y: ["50%", "-50%"] }}
         >
           <Image src={down} alt="/" />
         </motion.div>
-      </IconButton>
+      </IconButton> */}
+      </Box>
     </Box>
   );
 }

@@ -3,7 +3,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Typography,
   Box,
   IconButton,
@@ -13,6 +12,7 @@ import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
 import example from "../../public/images/example.png";
 import more from "../../public/images/more-information.png";
 import Image from "next/image";
+import styles from "../../styles/Card.module.css";
 
 function WorksCards() {
   const [expanded, setExpanded] = useState(false);
@@ -22,42 +22,11 @@ function WorksCards() {
   };
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "transparent",
-        }}
-      >
-        <Box
-          sx={{
-            width: "100%",
-            height: "fit-content",
-            display: "flex",
-            justifyContent: "center",
-            bgcolor: "transparent",
-          }}
-        >
-          <Card
-            sx={{
-              position: "relative",
-              width: "70%",
-              backgroundColor: "transparent",
-              boxShadow: "none",
-              backgroundImage: "none",
-              height: "fit-content",
-              padding: "0 0 200px 0",
-              flexDirection: "column",
-
-              "&.MuiPaper": {
-                backgroundImage: "none",
-              },
-            }}
-          >
+      <div className={styles.container}>
+        <Box className={styles.wrapper}>
+          <Card className={styles.card}>
             <Image
-              style={{ borderRadius: "8px" }}
+              className={styles.image}
               component={Image}
               height={300}
               width={500}
@@ -65,32 +34,13 @@ function WorksCards() {
               src={example}
               alt="/"
             />
-            <div
-              style={{
-                position: "absolute",
-                height: "fit-content",
-                display: "flex",
-                top: "5%",
-                left: "400px",
-                maxWidth: "1000",
-                width: "1000",
-                flexDirection: "column",
-              }}
-            >
+            <div className={styles.description}>
               <CardActions
                 sx={{ paddingLeft: "25%" }}
                 component="div"
                 disableSpacing
               >
-                <IconButton
-                  sx={{
-                    border: "2px solid #fff",
-                    height: "fit-content",
-                    color: "#fff",
-                    borderRadius: "8px",
-                    fontSize: "14px",
-                  }}
-                >
+                <IconButton className={styles.more}>
                   More Info{" "}
                   <Image
                     style={{ marginLeft: "auto" }}
