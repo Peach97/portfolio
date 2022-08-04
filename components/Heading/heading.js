@@ -101,7 +101,7 @@ function Heading() {
         </Typography>
       </div>
 
-      <Typography color="white" variant="h1" fontWeight={800} component="div">
+      <Typography color="white" variant="h2" fontWeight={800} component="div">
         <motion.div
           whileHover={{ scale: 1.5, color: "#7A33ED" }}
           className={styles.letter}

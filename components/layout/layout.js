@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { Container, Box } from "@mui/system";
 import Particles from "../ParticlesBackground";
 import styles from "../../styles/Home.module.css";
+import dynamic from "next/dynamic";
+import Background from "../background";
 
 const Main = ({ children, router }) => {
   return (
@@ -10,12 +12,12 @@ const Main = ({ children, router }) => {
       <Head>
         <title>Cameron Petrie - Home</title>
       </Head>
-      <Particles />
+
       <Navbar path={router.asPath} />
-      <Box id="home-container" className={styles.container}>
-        <Box className={styles.background} />
+      <Background />
+      <Container className={styles.container} maxWidth="xl">
         {children}
-      </Box>
+      </Container>
     </Box>
   );
 };

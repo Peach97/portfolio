@@ -94,6 +94,13 @@ function DrawerComp({ path }) {
               {links.map((link, index) => (
                 <ListItem key={index} disablePadding>
                   <ListItemButton
+                    disableRipple
+                    sx={{
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent",
+                      },
+                    }}
+                    disableTouchRipple
                     LinkComponent={NextLink}
                     path={path}
                     href={link.path}
