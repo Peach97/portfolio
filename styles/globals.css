@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+
 }
 
 a {
@@ -22,7 +23,7 @@ a {
   }
 
   body {
-    color: white;
-    background: black;
+    color: #fff;
+    background-color: black;
   }
 }

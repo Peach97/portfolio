@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { bounceTransition } from "../components/Transitions/transitions";
 import Particles from "../components/ParticlesBackground";
 import Heading from "../components/Heading/heading";
+import { Container } from "@mui/system";
 
 export default function HeroSection() {
   function scrollTo() {
@@ -17,20 +18,18 @@ export default function HeroSection() {
     });
   }
   return (
-    <>
-      <Box className={styles.container}>
-        <Box className={styles.background} />
-        <Heading />
-        <Particles id={styles.tsparticles} />
-        <IconButton onClick={scrollTo} className={styles.down}>
-          <motion.div
-            transition={bounceTransition}
-            animate={{ y: ["50%", "-50%"] }}
-          >
-            <Image src={down} alt="/" />
-          </motion.div>
-        </IconButton>
-      </Box>
-    </>
+    <Box className={styles.header}>
+      <Heading />
+      <Particles id={styles.tsparticles} />
+
+      <IconButton onClick={scrollTo} className={styles.down}>
+        <motion.div
+          transition={bounceTransition}
+          animate={{ y: ["50%", "-50%"] }}
+        >
+          <Image src={down} alt="/" />
+        </motion.div>
+      </IconButton>
+    </Box>
   );
 }

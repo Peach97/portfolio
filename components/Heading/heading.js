@@ -38,7 +38,7 @@ function Heading() {
             whileHover={{ scale: 1.5, color: "#7A33ED" }}
             className={styles.letter}
           >
-            '
+            &apos;
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.5, color: "#7A33ED" }}
