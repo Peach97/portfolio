@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { forwardRef, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import styles from "../styles/Home.module.css";
 import {
   OrbitControls,
@@ -8,8 +8,14 @@ import {
   Environment,
   PerspectiveCamera,
   Float,
+  QuadraticBezierLine,
+  Cloud,
+  Sky,
 } from "@react-three/drei";
-import { blue } from "@mui/material/colors";
+import Peach from "../components/NewPeach";
+import * as THREE from "three";
+import { getDisplayName } from "next/dist/shared/lib/utils";
+import { display } from "@mui/system";
 
 function Sphere() {
   const ref = useRef();
@@ -26,30 +32,55 @@ function Sphere() {
     </>
   );
 }
-
-function Floor() {
+function Cable({
+  start,
+  end,
+  v1 = new THREE.Vector3(),
+  v2 = new THREE.Vector3(),
+}) {
+  const ref = useRef();
+  useFrame(
+    () =>
+      ref.current.setPoints(
+        start.current.getWorldPosition(v1),
+        end.current.getWorldPosition(v2)
+      ),
+    []
+  );
+  return <QuadraticBezierLine ref={ref} lineWidth={1} color="#000" />;
+}
+// eslint-disable-next-line react/display-name
+const Floor = forwardRef((props, ref) => {
   return (
-    <mesh rotation={[-1.570796, 0, 0]} position={[1, -0.5, 0]}>
+    <mesh ref={ref} {...props}>
       <boxGeometry attach="geometry" args={[20, 2]} />
-      <meshLambertMaterial attach="material" color="#7A33ED" />
+      <meshLambertMaterial attach="material" color="#964B00" />
     </mesh>
   );
-}
+});
 
 export default function Background() {
+  const floor = useRef();
+  const peach = useRef();
   return (
     <Canvas dpr={[1, 2]} shadows style={{ position: "fixed" }}>
-      <PerspectiveCamera makeDefault position={[7.5, 1, 2.5]} />
+      <PerspectiveCamera makeDefault position={[7.5, 1, 0]} />
+      <directionalLight
+        castShadow
+        position={[-10, -5, -2]}
+        intensity={10}
+        color="white"
+      />
 
-      <directionalLight position={[0, 5, -2]} intensity={0.5} color="red" />
+      <directionalLight position={[0, 5, -2]} intensity={0.5} color="white" />
 
       <spotLight
         position={[5, 20, 5]}
-        intensity={20}
+        intensity={2.5}
         penumbra={1}
         angle={0.35}
         castShadow
-        color="#7A33ED"
+        color="white"
       />
       <spotLight
         position={[-5, 20, 5]}
@@ -57,13 +88,23 @@ export default function Background() {
         penumbra={1}
         angle={0.35}
         castShadow
-        color="#0c8cbf"
+        color="white"
       />
-      <Float scale={0.75} position={[0, 0.5, 0]} rotation={[0, 0.6, 0]}>
-        <Sphere />
+      <Float scale={0.75} position={[0, 2, 0]} rotation={[0, 0.6, 0]}>
+        <OrbitControls />
       </Float>
-      <Floor />
-      <Stars />
+
+      <Floor rotation={[20, 0, 0]} position={[1, 2, -2]} ref={floor} />
+      <Cable start={floor} end={peach} />
+      <Peach
+        castShadow
+        receiveShadow
+        ref={peach}
+        rotation={[1.5, 0.1, -1]}
+        position={[0.0001, 0, -2]}
+        scale={[7.5, 7.5, 7.5]}
+      />
+      <Sky />
       {/* <Backdrop floor={2} position={[0, -0.5, -3]} scale={[50, 10, 4]}>
         <meshStandardMaterial
           color="#353540"
