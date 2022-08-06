@@ -10,6 +10,7 @@ import { bounceTransition } from "../components/Transitions/transitions";
 import Particles from "../components/ParticlesBackground";
 import Heading from "../components/Heading/heading";
 import { Container } from "@mui/system";
+import Works from "../pages/works";
 
 export default function HeroSection() {
   function scrollTo() {
@@ -18,7 +19,7 @@ export default function HeroSection() {
     });
   }
   return (
-    <Box className={styles.headerContainer}>
+    <Box sx={{ zIndex: -1 }}>
       <Box className={styles.header}>
         <Heading />
         {/* <IconButton onClick={scrollTo} className={styles.down}>
@@ -29,6 +30,9 @@ export default function HeroSection() {
           <Image src={down} alt="/" />
         </motion.div>
       </IconButton> */}
+      </Box>
+      <Box>
+        <Works />
       </Box>
     </Box>
   );
