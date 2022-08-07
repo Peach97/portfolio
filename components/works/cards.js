@@ -15,7 +15,7 @@ import Image from "next/image";
 import styles from "../../styles/Card.module.css";
 
 function WorksCards() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(null);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -27,10 +27,8 @@ function WorksCards() {
           <Card className={styles.card}>
             <Image
               className={styles.image}
-              component={Image}
               height={300}
               width={500}
-              fixed
               src={example}
               alt="/"
             />
