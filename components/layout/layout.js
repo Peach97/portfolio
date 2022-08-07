@@ -5,6 +5,7 @@ import Particles from "../ParticlesBackground";
 import styles from "../../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import Background from "../Three/background";
+import PeachLoader from "../Three/peach-loader";
 
 const Main = ({ children, router }) => {
   return (
@@ -12,10 +13,11 @@ const Main = ({ children, router }) => {
       <Head>
         <title>Cameron Petrie - Home</title>
       </Head>
-
       <Navbar path={router.asPath} />
-      <Background />
-      <Box className={styles.container}>{children}</Box>
+
+      <Box className={styles.container}>
+        <div>{children}</div>
+      </Box>
     </Box>
   );
 };

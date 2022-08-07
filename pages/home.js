@@ -11,6 +11,7 @@ import Particles from "../components/ParticlesBackground";
 import Heading from "../components/Heading/heading";
 import { Container } from "@mui/system";
 import Works from "../pages/works";
+import PeachLoader from "../components/Three/peach-loader";
 
 export default function HeroSection() {
   function scrollTo() {
@@ -19,18 +20,19 @@ export default function HeroSection() {
     });
   }
   return (
-    <Box sx={{ zIndex: -1 }}>
+    <Box sx={{ height: "100vh", width: "100%" }}>
       <Box className={styles.header}>
         <Heading />
         {/* <IconButton onClick={scrollTo} className={styles.down}>
         <motion.div
-          transition={bounceTransition}
-          animate={{ y: ["50%", "-50%"] }}
+        transition={bounceTransition}
+        animate={{ y: ["50%", "-50%"] }}
         >
-          <Image src={down} alt="/" />
+        <Image src={down} alt="/" />
         </motion.div>
       </IconButton> */}
       </Box>
+      <PeachLoader />
       <Box>
         <Works />
       </Box>

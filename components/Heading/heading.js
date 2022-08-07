@@ -5,7 +5,7 @@ import styles from "../../styles/Home.module.css";
 import { Box } from "@mui/system";
 function Heading() {
   return (
-    <Box className={styles.header}>
+    <Box className={styles.title}>
       <Typography color="white" variant="h2" component="div" fontWeight={100}>
         <motion.div
           whileHover={{ scale: 1.5, color: "#FFA500" }}

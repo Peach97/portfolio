@@ -9,7 +9,6 @@ export default function OrbitController() {
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
       const { x, y } = state.mouse;
-      console.log(-x * angleToRadians(90));
       orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(45));
       orbitControlsRef.current.setPolarAngle((y + 1) * angleToRadians(90 - 30));
       orbitControlsRef.current.update();
