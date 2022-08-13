@@ -3,9 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { Container, Box } from "@mui/system";
 import Particles from "../ParticlesBackground";
 import styles from "../../styles/Home.module.css";
-import dynamic from "next/dynamic";
-import Background from "../Three/background";
-import PeachLoader from "../Three/peach-loader";
+import Scene from "../Three/scene";
 
 const Main = ({ children, router }) => {
   return (
@@ -13,11 +11,9 @@ const Main = ({ children, router }) => {
       <Head>
         <title>Cameron Petrie - Home</title>
       </Head>
+      <Scene />
       <Navbar path={router.asPath} />
-
-      <Box className={styles.container}>
-        <div>{children}</div>
-      </Box>
+      <Container className={styles.container}>{children}</Container>
     </Box>
   );
 };
