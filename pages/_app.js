@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps, router }) {
       setTimeout(() => {
         setShowPage(true);
         setLoading(false);
-      }, 3000);
+      }, 5000);
     // setLoading(false) &&
     // url === router.asPath && setTimeout(() => setLoading(false), 5000);
     router.events.on("routeChangeStart", handleStart());
@@ -79,26 +79,29 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      {loading && <LoaderConfig />}
-      <>
-        <ThemeProvider theme={theme}>
-          <Layout router={router}>
-            <AnimatePresence>
+      {loading ? (
+        <LoaderConfig />
+      ) : (
+        <>
+          <ThemeProvider theme={theme}>
+            <Layout router={router}>
+              {/* <AnimatePresence>
               {showPage && (
                 <motion.div
-                  variants={containerVariants}
-                  transition={{ x: { duration: 1 } }}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                >
-                  <Component {...pageProps} key={router.route} />
-                </motion.div>
+                variants={containerVariants}
+                transition={{ x: { duration: 1 } }}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              > */}
+              <Component {...pageProps} key={router.route} />
+              {/* </motion.div>
               )}
-            </AnimatePresence>
-          </Layout>
-        </ThemeProvider>
-      </>
+            </AnimatePresence> */}
+            </Layout>
+          </ThemeProvider>
+        </>
+      )}
     </>
   );
 }

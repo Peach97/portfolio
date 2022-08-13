@@ -17,6 +17,7 @@ export default function OrbitController() {
 
   return (
     <OrbitControls
+      enableZoom={false}
       ref={orbitControlsRef}
       minPolarAngle={angleToRadians(40)}
       maxPolarAngle={angleToRadians(80)}
