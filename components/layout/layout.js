@@ -11,7 +11,7 @@ const Main = ({ children, router }) => {
       <Head>
         <title>Cameron Petrie - Home</title>
       </Head>
-      <Scene />
+      {/* <Scene /> */}
       <Navbar path={router.asPath} />
       <Container className={styles.container}>{children}</Container>
     </Box>
