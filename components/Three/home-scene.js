@@ -72,18 +72,35 @@ const RoomScene = () => {
       camera.lookAt(target);
       setCamera(camera);
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.5);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 0.2);
       scene.add(ambientLight);
-      const light = new THREE.PointLight("#FFA500", 1);
-      light.position.set(-1, 1, 0);
-      scene.add(light);
+      const pointLight = new THREE.PointLight("#EFC070", 250, 100);
+      pointLight.position.set(-25, 100, 0);
+      //x = length y = height z = depth
+      scene.add(pointLight);
+
+      const sphereSize = 20;
+      // const pointLightHelper = new THREE.PointLightHelper(
+      //   pointLight,
+      //   sphereSize
+      // );
+      // scene.add(pointLightHelper);
+      const secondPointLight = new THREE.PointLight("#EFC070", 100, 100);
+      secondPointLight.position.set(25, 100, -30);
+      scene.add(secondPointLight);
+
+      // const secondPointLightHelper = new THREE.PointLightHelper(
+      //   secondPointLight,
+      //   sphereSize
+      // );
+      // scene.add(secondPointLightHelper);
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, "/models/FinalRoom.glb", {
+      loadGLTFModel(scene, "/models/NewRoom.glb", {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {

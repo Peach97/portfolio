@@ -10,7 +10,7 @@ function Heading() {
         color="white"
         variant="h3"
         component="div"
-        sx={{ margin: "0 0 2.5rem 0" }}
+        sx={{ margin: "0 0 1rem 0" }}
         fontWeight={100}
       >
         <motion.div
@@ -33,11 +33,7 @@ function Heading() {
         </motion.div>
       </Typography>
       <div>
-        <Typography
-          variant="h3"
-          sx={{ margin: "0 0 2.5rem 0" }}
-          component="div"
-        >
+        <Typography variant="h3" sx={{ margin: "0 0 1rem 0" }} component="div">
           <motion.div
             whileHover={{ scale: 1.5, color: "#FFA500" }}
             className={styles.letter}
@@ -115,7 +111,7 @@ function Heading() {
         color="white"
         variant="h3"
         fontWeight={800}
-        sx={{ margin: "0 0 2.5rem 0" }}
+        sx={{ margin: "0 0 1rem 0" }}
         component="div"
       >
         <motion.div
