@@ -74,13 +74,16 @@ const RoomScene = () => {
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 0.5);
       scene.add(ambientLight);
+      const light = new THREE.PointLight("#FFA500", 1);
+      light.position.set(-1, 1, 0);
+      scene.add(light);
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, "/models/ScaledClassyRoom.glb", {
+      loadGLTFModel(scene, "/models/FinalRoom.glb", {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
