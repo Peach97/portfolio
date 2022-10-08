@@ -1,19 +1,34 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Navbar from "../Navbar/Navbar";
 import { Container, Box } from "@mui/system";
-import Particles from "../ParticlesBackground";
 import styles from "../../styles/Home.module.css";
-import Scene from "../Three/scene";
+import { motion, useScroll } from "framer-motion";
+import { useRouter } from "next/router";
 
-const Main = ({ children, router }) => {
+const Main = ({ children, toggle, setToggle, page, router }) => {
+  const { scrollYProgress } = useScroll();
   return (
-    <Box pb={8}>
+    <Box>
       <Head>
         <title>Cameron Petrie - Home</title>
       </Head>
-      {/* <Scene /> */}
-      <Navbar path={router.asPath} />
-      <Container className={styles.container}>{children}</Container>
+      <Navbar
+        page={page}
+        toggle={toggle}
+        setToggle={setToggle}
+        path={router.asPath}
+      />
+      <Box bgcolor="text.primary">
+        <motion.div
+          className={page ? styles.page : styles.progress}
+          style={{ scaleX: scrollYProgress, background: "inherit" }}
+        />
+      </Box>
+      <Box toggle={toggle} router={router} className={styles.container}>
+        {children}
+        {/* <Footer page={page} toggle={toggle} /> */}
+      </Box>
     </Box>
   );
 };
