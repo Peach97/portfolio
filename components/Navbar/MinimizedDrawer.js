@@ -53,7 +53,10 @@ function MinimizedDrawer({ openDrawer, setOpenDrawer, setIsOpen }) {
               {links.map((link, index) => (
                 <ListItem key={index} disablePadding>
                   <ListItemButton className={styles.btn}>
-                    <ListItemText className={styles.text} primary={link} />
+                    <ListItemText
+                      className={styles.text}
+                      primary={link.title}
+                    />
                   </ListItemButton>
                 </ListItem>
               ))}

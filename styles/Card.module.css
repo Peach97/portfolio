@@ -1,0 +1,210 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.card {
+    position: relative;
+    width: 70%;
+    background-color: transparent;
+    box-shadow: none;
+    background-image: none;
+    height: fit-content;
+    padding: 0 0 200px 0;
+    flex-direction: column;
+}
+
+.image {
+    border-radius: 8px;
+
+
+}
+
+.description {
+    position: absolute;
+    height: fit-content;
+    display: flex;
+    top: 5%;
+    left: 400px;
+    max-width: 1000px;
+    flex-direction: column;
+}
+
+.more {
+    border: 2px solid #fff;
+    height: fit-content;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.aboutContainer {
+    z-index: 2;
+    flex-direction: column;
+    position: relative;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+    width: 35vw;
+    height: fit-content;
+
+}
+
+.worksContainer {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin-left: auto;
+    width: 50vw;
+    height: fit-content;
+
+}
+
+.contactContainer {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin-left: auto;
+    width: 35vw;
+    height: fit-content;
+
+}
+
+.aboutPaper {
+    backdrop-filter: blur(7.5px);
+    margin: 0;
+    display: flex;
+    position: relative;
+    height: 70.675rem;
+    padding: 20rem 1rem 15rem 1rem;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 16px;
+
+}
+
+.contactPaper {
+    backdrop-filter: blur(7.5px);
+    margin: 0;
+    display: flex;
+    position: relative;
+    height: 50.675rem;
+    padding: 1rem 1rem 0rem 1rem;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 16px;
+}
+
+.worksPaper {
+    backdrop-filter: blur(7.5px);
+    margin: 0;
+    display: flex;
+    position: relative;
+    height: 87.675rem;
+    padding: 1rem 1rem 0rem 1rem;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 16px;
+
+}
+
+.skillsPaper {
+    backdrop-filter: blur(7.5px);
+    justify-content: center;
+    display: flex;
+    position: relative;
+    height: 75.675rem;
+    margin: 0;
+    padding: 1rem 1rem 0rem 1rem;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 16px;
+
+
+
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    line-height: 2;
+    text-align: center;
+    cursor: default;
+    color: inherit;
+
+
+}
+
+.aboutText {
+    position: relative;
+    line-height: 3;
+    text-align: center;
+    font-size: larger;
+    margin: 0 1rem 0 1rem;
+
+}
+
+.aboutHeading {
+    position: relative;
+    line-height: 1;
+    text-align: center;
+
+}
+
+@media (max-width: 968px) {
+    .aboutContainer {
+        display: flex;
+        width: 100vw;
+    }
+
+    .aboutHeading {
+        padding-top: 2.5rem;
+    }
+
+    .aboutPaper {
+        height: fit-content;
+    }
+
+    .skillsPaper {
+        padding-bottom: 1rem;
+    }
+
+    .skillsContainer {
+        margin-top: 50vh;
+        width: 100vw;
+    }
+
+    .worksPaper {
+        height: fit-content;
+    }
+
+    .worksContainer {
+        width: 100vw;
+        justify-content: flex-end;
+    }
+
+    .aboutPaper {
+        padding: 1rem 2.5rem 10rem 2.5rem;
+
+    }
+
+    .aboutText {
+        line-height: 1
+    }
+}

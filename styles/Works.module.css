@@ -1,0 +1,174 @@
+.container {
+    position: absolute;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 0 0 0 0;
+    width: 100%;
+    flex-direction: column;
+    top: 0;
+    z-index: -1;
+}
+
+.imageContainer {
+    display: flex;
+    height: 75vh;
+    width: 100%;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
+
+.textBox {
+    position: absolute;
+    top: 70vh;
+    right: 5rem;
+
+}
+
+.text {
+    display: flex;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.subtitle {
+    display: flex;
+    position: absolute;
+    font-size: 1rem;
+    top: 70vh;
+    left: 5rem;
+    max-width: 15rem;
+    transform: translateY(-50%);
+    font-weight: 400;
+
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 2;
+    margin: 2.5rem 0 3.5rem 0;
+}
+
+
+.section {
+    font-size: 1.75rem;
+    font-weight: 800;
+    display: flex;
+
+}
+
+.stackContainer {
+    width: 100%;
+    min-height: 25rem;
+    height: fit-content;
+    padding: 2.5rem;
+    justify-content: center;
+}
+
+.techStackGrid {
+    display: flex;
+    justify-content: center;
+}
+
+.techStackCard {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+}
+
+.imageWrapper {
+    height: fit-content;
+    align-items: center;
+    display: flex;
+}
+
+.techStackImage {
+    margin-left: 50px;
+}
+
+.techStackText {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 2.5rem;
+
+}
+
+.bottomNav {
+    z-index: 999;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    display: flex;
+}
+
+.sourceCodeBtn {
+    display: flex;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    text-transform: none;
+    font-weight: 400;
+    border-top-left-radius: 0;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+
+}
+
+.linkContainer {
+    width: 100vw;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: none;
+    border-radius: 0;
+}
+
+.linkText {
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+@media (max-width: 968px) {
+    .textBox {
+        position: absolute;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+    }
+
+    .text {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        display: flex;
+        position: absolute;
+        font-size: 1rem;
+        left: 50%;
+        width: 100%;
+        top: 70vh;
+        transform: translateX(-50%);
+        font-weight: 400;
+        text-align: center;
+        justify-self: center;
+
+    }
+
+    .description {
+        font-size: .9rem;
+
+        line-height: 1.5;
+
+    }
+}

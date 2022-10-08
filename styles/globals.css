@@ -5,6 +5,45 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+
+
+}
+
+#map {
+  height: 100rem;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  border-radius: 16px;
+}
+
+#house {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50%;
+  left: 24%;
+  z-index: 10;
+  height: fit-content;
+}
+
+#marker {
+  position: relative;
+  top: 10.5%;
+  left: 22.5%;
+  z-index: 11
+}
+
+#home {
+  position: relative;
+  z-index: 10;
+}
+
+#cam {
+
+  position: absolute;
+  z-index: 11;
+
 }
 
 a {
@@ -13,16 +52,254 @@ a {
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  background-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+  /* html {
     color-scheme: dark;
-  }
+  } */
 
   body {
-    color: white;
-    background: black;
+
+    margin: 0;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem 5rem;
+  cursor: pointer;
+}
+
+.expand {
+  height: 80vh;
+  width: 80vw;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem 5rem;
+
+}
+
+.scroll-btn-left {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 1rem;
+
+}
+
+.scroll-btn-right {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1rem;
+}
+
+.scroll-text {
+  font-size: 14px;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.card h2 {
+  text-align: start;
+}
+
+.card h5 {
+  text-align: start;
+}
+
+.card p {
+  text-align: start;
+  line-height: 150%;
+}
+
+.container {
+  height: 175vh;
+  width: 100vw;
+  display: flex;
+}
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.experience-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.takeover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+.takeover-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-wrapper {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  max-width: 100%;
+}
+
+.hero-main {
+  position: absolute;
+  bottom: 12.5rem;
+  left: 7.5rem;
+  line-height: 0.5;
+}
+
+.hero-main-title {
+  font-size: 28px;
+  max-width: 25rem;
+  line-height: 2;
+
+}
+
+.hero-main-subtitle {
+  font-size: 56px;
+
+
+}
+
+.hero-main-description {
+  font-size: 56px;
+
+}
+
+.section-margin {
+  height: 187.5rem;
+  width: 100%;
+}
+
+.section-margin-edit {
+  height: 80rem;
+  width: 100%;
+
+}
+
+.toolbox-tip {
+  z-index: 2;
+  flex-direction: column;
+  position: sticky;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  background-color: transparent;
+  width: 25vw;
+  height: fit-content;
+}
+
+.skills-container {
+  z-index: 2;
+  position: relative;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+  width: 35vw;
+  height: 0;
+
+}
+
+.toolbox-paper {
+  backdrop-filter: blur(7.5px);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 10rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+@media (max-width: 968px) {
+
+  #map {
+    margin-top: 20vh;
+    position: relative;
+    display: flex;
+    height: 250vh;
+    width: 200%;
+  }
+
+  #house {
+    top: 65%;
+    left: -10%;
+  }
+
+  #second-move,
+  .section-margin {
+    flex-direction: column;
+  }
+
+  #third-move,
+  .section-margin {
+    flex-direction: column
+  }
+
+  .section-margin-new {
+    display: flex;
+    justify-content: flex-start;
+    height: 300vh;
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-main {
+    left: 1rem;
+    bottom: 5rem;
+  }
+
+  .hero-wrapper {
+    width: calc(100% - 60px);
+  }
+
+  .hero-main-title {
+    font-size: 20px;
+    max-width: 20rem;
+  }
+
+  .hero-main-subtitle {
+    font-size: 32px;
+  }
+
+  .hero-main-description {
+    font-size: 32px;
+  }
+
+  .scroll-btn-left {
+    bottom: 50%
+  }
+
+  .scroll-btn-right {
+    bottom: 50%
   }
 }
