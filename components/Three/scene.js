@@ -5,7 +5,7 @@ import Preview from "./TakeoverPods/TakeoverPreview";
 import OrbitController from "./OrbitControls";
 import Preview2 from "./SlickNSpan/SlickNspan";
 
-export const takeovermodel = () => {
+export const TakeoverModel = () => {
   // const preview = useRef();
 
   return (
@@ -27,7 +27,7 @@ export const takeovermodel = () => {
     </Canvas>
   );
 };
-export const slickmodel = () => {
+export const SlickModel = () => {
   // const preview2 = useRef();
 
   return (
