@@ -14,7 +14,7 @@ function Works({ toggle, setPage }) {
   useEffect(() => {
     setPage(true);
     context.setValue("slick");
-  }, [setPage]);
+  }, [setPage, context]);
 
   return (
     <>

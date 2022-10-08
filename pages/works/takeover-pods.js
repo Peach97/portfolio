@@ -15,7 +15,7 @@ function Works({ toggle, setPage }) {
   useEffect(() => {
     setPage(true);
     context.setValue("takeover");
-  }, [setPage]);
+  }, [setPage, context]);
   //removes navbar and footer on load
 
   return (
