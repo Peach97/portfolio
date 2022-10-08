@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { Divider, Typography } from "@mui/material";
 import TechStack from "../../components/works/tech-stack";
 import LiveLink from "../../components/works/live-link";
-import { takeovermodel } from "../../components/Three/Scene";
+import { TakeoverModel } from "../../components/Three/Scene";
 import TakeoverToggler from "../../components/works/takeover-theme";
 import WorkContext from "../../components/context";
 
@@ -29,7 +29,7 @@ function Works({ toggle, setPage }) {
           }}
         >
           <Box color="text.primary" className={styles.imageContainer}>
-            <takeovermodel />
+            <TakeoverModel />
             <div className={styles.textBox}>
               <Typography className={styles.text}>TakeoverPods</Typography>
             </div>
