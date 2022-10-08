@@ -6,7 +6,7 @@ import OrbitController from "./OrbitControls";
 import Preview2 from "./SlickNSpan/SlickNspan";
 
 export const TakeoverModel = () => {
-  // const preview = useRef();
+  const preview = useRef();
 
   return (
     <Canvas
@@ -23,7 +23,7 @@ export const TakeoverModel = () => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview />
+      <Preview ref={preview}/>
     </Canvas>
   );
 };
@@ -45,7 +45,7 @@ export const SlickModel = () => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview2 />
+      <Preview2 ref={preview2}/>
     </Canvas>
   );
 };
