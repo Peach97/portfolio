@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import { Divider, Typography } from "@mui/material";
 import TechStack from "../../components/works/tech-stack";
 import LiveLink from "../../components/works/live-link";
-import { slickmodel } from "../../components/Three/Scene";
+import { SlickModel } from "../../components/Three/Scene";
 import SlickToggler from "../../components/works/slick-theme";
 import WorkContext from "../../components/context";
 
@@ -27,7 +27,7 @@ function Works({ toggle, setPage }) {
           }}
         >
           <Box color="text.primary" className={styles.imageContainer}>
-            <slickmodel />
+            <SlickModel />
             <div className={styles.textBox}>
               <Typography className={styles.text}>SlickNSpan</Typography>
             </div>
