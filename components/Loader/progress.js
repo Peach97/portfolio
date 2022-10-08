@@ -6,11 +6,18 @@ import Box from "@mui/material/Box";
 
 function LinearProgressWithLabel(props) {
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          color: "#fff",
+          justifyContent: "center",
+        }}
+      >
         <LinearProgress color="inherit" variant="indeterminate" {...props} />
       </Box>
-      <Box sx={{ minWidth: 35 }}></Box>
     </Box>
   );
 }
@@ -38,7 +45,7 @@ export default function LinearWithValueLabel() {
   }, []);
 
   return (
-    <Box sx={{ width: "25%", margin: "2.5rem 0 0 0" }}>
+    <Box color="text.primary" sx={{ width: "50%", margin: "2.5rem 0 0 0" }}>
       <LinearProgressWithLabel value={progress} />
     </Box>
   );

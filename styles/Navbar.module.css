@@ -8,6 +8,7 @@
 
 .toolbar {
     padding: 0;
+    width: 100%;
 }
 
 .imageContainer {
@@ -15,18 +16,16 @@
 }
 
 .btn {
-    text-align: center;
+    text-align: left;
 
     display: flex;
     width: 100%;
     text-decoration: none;
-    justify-content: center;
-    border-top: solid 1px rgba(255, 255, 255, 0.2);
-    padding: 1rem 0 1rem 0;
+    /* justify-content: center; */
+    padding: 1rem 0 1rem 2.5rem;
 }
 
 .text {
-    color: rgba(255, 255, 255, 0.5);
 
     display: flex;
 
@@ -36,7 +35,6 @@
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    color: rgba(255, 255, 255, 0.5)
 }
 
 .iconBtn {
@@ -46,12 +44,21 @@
 }
 
 .list {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-top: 0.1px solid;
+    padding: 0
 }
 
-.text:hover {
-
-    color: #FFA500
+.logo {
+    border-radius: 50%;
+    padding: 2rem;
+    /* border: 5px solid; */
+    position: absolute;
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
 }

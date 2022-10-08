@@ -1,5 +1,6 @@
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import * as THREE from "three";
 
 export function loadGLTFModel(
   scene,
@@ -19,14 +20,20 @@ export function loadGLTFModel(
         const obj = gltf.scene;
         obj.name = "room";
         obj.position.x = 0;
-        obj.receiveShadow = receiveShadow;
-        obj.castShadow = castShadow;
+        obj.position.y = 0;
+        obj.receiveShadow = true;
+        obj.castShadow = true;
         scene.add(obj);
 
         obj.traverse(function (child) {
           if (child.isMesh) {
-            child.castShadow = castShadow;
-            child.receiveShadow = receiveShadow;
+            child.castShadow = true;
+            child.receiveShadow = true;
+            child.geometry.computeVertexNormals();
+          }
+          if (child.name === "Lampshade") {
+            child.material.emissive = new THREE.Color("#E7E1B1");
+            child.material.emissiveIntensity = 3;
           }
         });
         resolve(obj);

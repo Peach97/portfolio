@@ -1,45 +1,117 @@
-import React, { useState, useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Navbar from "../components/Navbar/Navbar";
-import { Box, IconButton } from "@mui/material";
-import down from "../public/images/down-arrow.png";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { Box, Typography } from "@mui/material";
+import Experience from "../components/Experience/Experience";
+import ScrollButton from "../components/StyledComponents/ScrollButton";
 import { bounceTransition } from "../components/Transitions/transitions";
-import Particles from "../components/ParticlesBackground";
-import Heading from "../components/Heading/heading";
-import { Container } from "@mui/system";
-import Works from "../pages/works";
-import Loader from "../components/Three/home-loader";
-import dynamic from "next/dynamic";
-import Scene from "../components/Three/home-scene";
+import { motion } from "framer-motion";
+import AboutCard from "../components/about/about";
+import Skills from "../components/about/skills";
+import WorksCard from "../components/works/cards";
+import ContactCard from "../components/contact/card";
 
-const LazyRoom = dynamic(() => import("../components/Three/home-scene"), {
-  ssr: false,
-  loading: () => <Loader />,
-});
+export default function HeroSection({ toggle, path }) {
+  useEffect(() => {
+    const experience = new Experience(
+      document.querySelector(".experience-canvas")
+    );
+  });
 
-export default function HeroSection() {
-  function scrollTo() {
-    document.querySelector("#works-container").scrollIntoView({
-      behavior: "smooth",
-    });
-  }
   return (
-    <Box className={styles.container}>
-      {/* <LazyRoom /> */}
-      <Heading />
-      <LazyRoom /> {/* <Box className={styles.header}> */}
-      {/* <IconButton onClick={scrollTo} className={styles.down}>
+    <>
+      <Box
+        className="hero"
+        component="section"
+        sx={{ bgcolor: "background.default" }}
+      >
         <motion.div
-        transition={bounceTransition}
-        animate={{ y: ["50%", "-50%"] }}
+          transition={bounceTransition}
+          animate={{ y: ["5%", "-5%"] }}
+          className="scroll-btn-left"
         >
-        <Image src={down} alt="/" />
+          <ScrollButton />
         </motion.div>
-      </IconButton> */}
-      {/* </Box> */}
-    </Box>
+        <motion.div
+          transition={bounceTransition}
+          animate={{ y: ["5%", "-5%"] }}
+          className="scroll-btn-right"
+        >
+          <ScrollButton />
+        </motion.div>
+        <div className="hero-wrapper">
+          <div className="experience">
+            <canvas className="experience-canvas"></canvas>
+          </div>
+
+          <Box className="hero-main" color="text.primary">
+            <Typography
+              className="hero-main-description"
+              textTransform="none"
+              fontWeight={800}
+            >
+              Hello,
+            </Typography>
+            <Typography
+              textTransform="none"
+              className="hero-main-subtitle"
+              fontWeight={800}
+            >
+              I&apos;m Cameron.
+            </Typography>
+            <Typography
+              textTransform="none"
+              className="hero-main-title"
+              fontWeight={400}
+            >
+              I do full stack development, design, and a bit of 3D modeling.
+            </Typography>
+          </Box>
+        </div>
+      </Box>
+      <Box
+        sx={{ bgcolor: "background.default" }}
+        component="div"
+        className="first-move section-margin-edit"
+      ></Box>
+      <Box
+        sx={{
+          bgcolor: "background.default",
+          display: "flex",
+          alignItems: "end",
+        }}
+        component="div"
+        id="second-move"
+        className="second-move section-margin"
+      >
+        <AboutCard toggle={toggle} />
+        <Skills toggle={toggle} />
+      </Box>
+      <Box
+        id="third-move"
+        className="third-move section-margin"
+        component="div"
+        sx={{
+          bgcolor: "background.default",
+          paddingTop: "auto",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "end",
+        }}
+      >
+        <WorksCard path={path} toggle={toggle} />
+      </Box>
+      <Box
+        className="fourth-move section-margin"
+        component="div"
+        sx={{
+          bgcolor: "transparent",
+          display: "flex",
+          paddingTop: "auto",
+          justifyContent: "flex-end",
+        }}
+      >
+        <ContactCard />
+      </Box>
+      <Box className="fifth-move section-margin"></Box>
+    </>
   );
 }

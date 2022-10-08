@@ -1,98 +1,82 @@
-import React, { useState } from "react";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-  Box,
-  IconButton,
-  Collapse,
-} from "@mui/material";
-import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
-import example from "../../public/images/example.png";
-import more from "../../public/images/more-information.png";
-import Image from "next/image";
+import React, { useState, useRef } from "react";
+import { Paper, Box, Typography, Divider } from "@mui/material";
+import { AnimatePresence, motion } from "framer-motion";
 import styles from "../../styles/Card.module.css";
+import { LogoButtonWhite, LogoButtonBlack } from "../Navbar/MenuButton";
+import WorksSummary from "./card-summary";
 
-function WorksCards() {
-  const [expanded, setExpanded] = useState(null);
+const WorksCard = ({ toggle, path }) => {
+  const scrollRef = useRef(null);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
   return (
     <>
-      <div className={styles.container}>
-        <Box className={styles.wrapper}>
-          <Card className={styles.card}>
-            <Image
-              className={styles.image}
-              height={300}
-              width={500}
-              src={example}
-              alt="/"
-            />
-            <div className={styles.description}>
-              <CardActions
-                sx={{ paddingLeft: "25%" }}
-                component="div"
-                disableSpacing
-              >
-                <IconButton className={styles.more}>
-                  More Info{" "}
-                  <Image
-                    style={{ marginLeft: "auto" }}
-                    height={24}
-                    width={24}
-                    src={more}
-                    alt="/"
-                  />
-                </IconButton>
-                <Typography color="#fff" sx={{ marginLeft: "auto" }}>
-                  Takeover Pods
-                </Typography>
-              </CardActions>
-
-              <CardContent
-                component="div"
-                sx={{
-                  bgcolor: "#121212",
-                  borderRadius: "8px",
-                }}
-              >
-                <Typography fontSize={14} variant="body1" color="#fff">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industrys
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </Typography>
-                <CardActions component="div" disableSpacing>
-                  <IconButton
-                    sx={{ marginLeft: "auto", color: "#fff" }}
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-label="show more"
-                  >
-                    <UnfoldMoreIcon />
-                  </IconButton>
-                </CardActions>
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                  <Typography color="#fff" paragraph>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industrys
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </Typography>
-                </Collapse>
-              </CardContent>
-            </div>
-          </Card>
-        </Box>
-      </div>
+      <Box className={styles.worksContainer}>
+        <Paper
+          className={styles.worksPaper}
+          sx={{
+            color: "text.primary",
+            bgcolor: "background.transparent",
+            padding: "1rem 1rem 20rem 1rem",
+            marginBottom: "5rem",
+          }}
+          elevation={4}
+        >
+          <Typography
+            className={styles.aboutHeading}
+            gutterBottom
+            fontWeight={800}
+            variant="h3"
+          >
+            Recent Works
+          </Typography>
+          <Divider sx={{ borderBottomWidth: "2px" }} />
+          <WorksSummary
+            path={path}
+            work="Blog"
+            to="takeover-pods"
+            app="Takeover Blog"
+            subtitle="CRUD Application"
+            toggle={toggle}
+            description="Sports podcasting/blogging application with full MERN stack capabilities. Offers authentication using Firebase as well as auto-updating content from Spotify API with client credentials flow authentication."
+            description2="Clean interface allowing users to quickly find podcast episodes and find any corresponding blog articles. The ultimate sports information experience all in one place."
+            first="MongoDB"
+            second="ExpressJS"
+            third="Firebase Auth"
+            fourth="NodeJS"
+          />
+          <Divider sx={{ borderBottomWidth: "2px" }} />
+          <WorksSummary
+            path={path}
+            work="Podcasting"
+            to="takeover-pods"
+            app="Takeover Podcasting"
+            subtitle="Listen to Episodes using Spotify API"
+            toggle={toggle}
+            description="Sports podcasting/blogging application with full MERN stack capabilities. Offers authentication using Firebase as well as auto-updating content from Spotify API with client credentials flow authentication."
+            description2="Clean interface allowing users to quickly find podcast episodes and find any corresponding blog articles. The ultimate sports information experience all in one place."
+            first="SpotifyAPI"
+            second="MaterialUI"
+            third="React"
+            fourth="NodeJS"
+          />
+          <Divider sx={{ borderBottomWidth: "2px" }} />
+          <WorksSummary
+            path={path}
+            work="Slick"
+            to="slick-n-span"
+            app="SlickNSpan"
+            subtitle="Mobile Detailing Service Page"
+            toggle={toggle}
+            description="Premium detailing service web application utilizing photoshop and adobe express for awesome visuals and a unique user experience."
+            description2="EmailJS allows for service requests to go directly to service providers email upon submission of the form. The aim was to create the fastest possible user route from the landing page to the shop."
+            first="React"
+            second="EmailJS"
+            third="Bootstrap"
+            fourth="AdobeExpress"
+          />
+        </Paper>
+      </Box>
     </>
   );
-}
-
-export default WorksCards;
+};
+export default WorksCard;

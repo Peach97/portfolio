@@ -1,20 +1,51 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import { OrthographicCamera } from "@react-three/drei";
+import Preview from "./TakeoverPods/TakeoverPreview";
+import OrbitController from "./OrbitControls";
+import Preview2 from "./SlickNSpan/SlickNspan";
 
-export default function Scene() {
+export const TakeoverModel = (props) => {
+  const preview = useRef();
+
   return (
     <Canvas
       style={{
-        position: "fixed",
+        position: "relative",
         top: 0,
         left: 0,
         width: "100%",
-        height: "100vh",
-        zIndex: 2,
+        height: "100%",
+        zIndex: 3,
       }}
     >
-      <Stars />
+      <ambientLight intensity={1} />
+
+      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
+      <OrbitController />
+      <Preview ref={preview} />
     </Canvas>
   );
-}
+};
+export const SlickModel = (props) => {
+  const preview2 = useRef();
+
+  return (
+    <Canvas
+      style={{
+        position: "relative",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 3,
+      }}
+    >
+      <ambientLight intensity={1} />
+
+      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
+      <OrbitController />
+      <Preview2 ref={preview2} />
+    </Canvas>
+  );
+};
