@@ -1,2 +1,2 @@
-*.glb             binary
+*.glb binary
 * !text !filter !merge !diff
