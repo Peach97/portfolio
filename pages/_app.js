@@ -1,43 +1,90 @@
 import "../styles/globals.css";
 import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
+import React, { useState, useEffect, useContext } from "react";
+import LoaderConfig from "../components/Loader/loader-config";
+import Layout from "../components/layout/layout";
+import { AnimatePresence, motion } from "framer-motion";
+import ThemeToggler from "../components/lib/theme";
+import { CssBaseline } from "@mui/material";
+import WorkContext from "../components/context";
 
-export const theme = createTheme({
-  palette: {
-    background: {
-      paper: "#00000035",
-    },
-  },
-  typography: {
-    fontFamily: ["Montserrat", "sans-serif"].join(","),
-  },
-});
-//Montserrat Font Family global
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
+function MyApp({ Component, pageProps, router }) {
+  const [value, setValue] = useState();
+  const context = useContext(WorkContext);
+  //Works page toggler
+  const [toggle, setToggle] = useState(false);
+  //Theme toggler
+  const [showPage, setShowPage] = useState(false);
+  const [loading, setLoading] = useState(true);
+  //loading handler
+  const [page, setPage] = useState(false);
+  //Navbar/footer toggler
+  useEffect(() => {
+    const handleStart = (url) => url !== router.asPath && setLoading(true);
+    const handleComplete = (url) =>
+      setTimeout(() => {
+        setShowPage(true);
+        setLoading(false);
+      }, 5000);
+    //loading timeout (5s)
+    // setLoading(false) &&
+    // url === router.asPath && setTimeout(() => setLoading(false), 5000);
+    router.events.on("routeChangeStart", handleStart());
+    router.events.on("routeChangeComplete", handleComplete());
+    router.events.on("routeChangeError", handleComplete());
+    return () => {
+      router.events.off("routeChangeStart", handleStart());
+      router.events.off("routeChangeComplete", handleComplete());
+      router.events.off("routeChangeError", handleComplete());
+    };
+  }, [router.asPath, router.events]);
+  //runs whenever a router event occurs
 
-theme.typography.h3 = {
-  fontSize: "3rem",
-  "@media (max-width:600px)": {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "2rem",
-  },
-};
-theme.typography.h1 = {
-  fontSize: "6rem",
-  "@media (max-width:600px)": {
-    fontSize: "5rem",
-  },
-  [theme.breakpoints.down("md")]: {
-    fontSize: "5rem",
-  },
-};
-//media queries for h1/h3
-function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <ThemeToggler toggle={toggle} setToggle={setToggle}>
+        <CssBaseline />
+        {loading ? (
+          <LoaderConfig />
+        ) : (
+          <Layout
+            toggle={toggle}
+            setToggle={setToggle}
+            page={page}
+            router={router}
+          >
+            {/* <AnimatePresence>
+              {showPage && (
+                <motion.div
+                variants={containerVariants}
+                transition={{ x: { duration: 1 } }}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              > */}
+            <WorkContext.Provider value={{ value, setValue }}>
+              <Component
+                path={router.asPath}
+                router={router}
+                setPage={setPage}
+                toggle={toggle}
+                setToggle={setToggle}
+                {...pageProps}
+                key={router.route}
+              />
+            </WorkContext.Provider>
+
+            {/* </motion.div>
+              )}
+            </AnimatePresence> */}
+          </Layout>
+        )}
+      </ThemeToggler>
+    </>
   );
 }
 

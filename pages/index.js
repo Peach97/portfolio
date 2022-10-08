@@ -1,30 +1,12 @@
-import React, { useState, useRef } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Navbar from "../components/Navbar/Navbar";
-import { Box, IconButton } from "@mui/material";
-import down from "../public/images/down-arrow.png";
-import { motion } from "framer-motion";
-import { bounceTransition } from "../components/Transitions/transitions";
-import Particles from "../components/ParticlesBackground";
-import Heading from "../components/Heading/heading";
-export default function Home() {
+import { Box } from "@mui/system";
+import React from "react";
+import HeroSection from "./home";
+
+export default function Home({ toggle, path, setPage }) {
   return (
     <>
-      <Box className={styles.container}>
-        <Box className={styles.background} />
-        <Heading />
-        <Particles id={styles.tsparticles} />
-        <Navbar />
-        <IconButton className={styles.down}>
-          <motion.div
-            transition={bounceTransition}
-            animate={{ y: ["50%", "-50%"] }}
-          >
-            <Image src={down} alt="/" />
-          </motion.div>
-        </IconButton>
+      <Box width="100%">
+        <HeroSection path={path} toggle={toggle} setPage={setPage} />
       </Box>
     </>
   );

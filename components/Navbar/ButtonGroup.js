@@ -2,25 +2,42 @@ import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import Image from "next/image";
-import github from "../../public/images/github-before.png";
-import linkedin from "../../public/images/linkedin-before.png";
-import email from "../../public/images/email-before.png";
+import githubW from "../../public/images/github-before.png";
+import linkedinW from "../../public/images/linkedin-before.png";
+import emailW from "../../public/images/email-before.png";
+import githubB from "../../public/images/github (4).png";
+import linkedinB from "../../public/images/linkedin (4).png";
+import emailB from "../../public/images/email (2).png";
 import styles from "../../styles/Navbar.module.css";
 
-const ButtonGroup = () => {
+export const LightButtonGroup = () => {
   return (
     <Box>
       <IconButton className={styles.iconBtn}>
-        <Image src={github} alt="/" />
+        <Image src={githubW} alt="/" />
       </IconButton>
       <IconButton className={styles.iconBtn}>
-        <Image src={linkedin} alt="/" />
+        <Image src={linkedinW} alt="/" />
       </IconButton>
       <IconButton className={styles.iconBtn}>
-        <Image src={email} alt="/" />
+        <Image src={emailW} alt="/" />
       </IconButton>
     </Box>
   );
 };
 
-export default ButtonGroup;
+export const DarkButtonGroup = () => {
+  return (
+    <Box>
+      <IconButton className={styles.iconBtn}>
+        <Image src={githubB} alt="/" />
+      </IconButton>
+      <IconButton className={styles.iconBtn}>
+        <Image src={linkedinB} alt="/" />
+      </IconButton>
+      <IconButton className={styles.iconBtn}>
+        <Image src={emailB} alt="/" />
+      </IconButton>
+    </Box>
+  );
+};

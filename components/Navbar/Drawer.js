@@ -1,96 +1,106 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Drawer from "@mui/material/Drawer";
-import Image from "next/image";
 import {
-  Box,
   Divider,
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
   Toolbar,
   useMediaQuery,
-  IconButton,
+  Typography,
 } from "@mui/material";
 import styles from "../../styles/Navbar.module.css";
-import logo from "../../public/images/logo.png";
-import { Twirl as Hamburger } from "hamburger-react";
-import { theme } from "../../pages/_app";
-import ButtonGroup from "./ButtonGroup";
-import MinimizedDrawer from "./MinimizedDrawer";
+import { LightButtonGroup, DarkButtonGroup } from "./ButtonGroup";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
+import { CloseButton } from "./MenuButton";
+import { useTheme } from "@emotion/react";
+import WorkContext from "../context";
 
-export const links = ["Home", "Works", "About", "Contact"];
+export const links = [
+  { title: "Home", path: "/" },
+  { title: "Works", path: "/works" },
+  { title: "About" },
+  { title: "Contact" },
+];
 //navbar links
 
-function DrawerComp() {
+function DrawerComp({ path, setOpen, setOpenNav, openNav, toggle }) {
+  const theme = useTheme();
+  //lazy loader useState
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   console.log(matches);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
-      {matches ? (
-        <>
-          <IconButton
-            disableRipple
-            className={styles.hamburger}
-            onClick={() => {
-              setOpenDrawer(!openDrawer);
-            }}
-          >
-            <Hamburger
-              direction="left"
-              toggled={isOpen}
-              toggle={setIsOpen}
-              size={40}
-              duration={0.6}
-              rounded
-            />
-          </IconButton>
-          <MinimizedDrawer
-            openDrawer={openDrawer}
-            setOpenDrawer={setOpenDrawer}
-            setIsOpen={setIsOpen}
-          />
-        </>
-      ) : (
-        // <MinimizedDrawer isOpen={isOpen} setIsOpen={setIsOpen}/>
+    <>
+      <Drawer
+        className={styles.drawer}
+        sx={
+          matches
+            ? {
+                "& .MuiDrawer-paper": {
+                  alignItems: "center",
+                  width: "50vw",
+                  borderLeft: "0.002rem solid ",
+                },
+              }
+            : {
+                "& .MuiDrawer-paper": {
+                  alignItems: "center",
+                  width: "20vw",
+                  borderLeft: "0.002rem solid ",
+                },
+              }
+        }
+        anchor="left"
+        transitionDuration={1000}
+        open={openNav}
+        onClose={() => {
+          setOpenNav(!openNav);
+          setOpen(false);
+        }}
+      >
+        <CloseButton
+          openNav={openNav}
+          setOpenNav={setOpenNav}
+          setOpen={setOpen}
+        />
+        <Toolbar className={styles.toolbar}>
+          <List className={styles.list}>
+            {links.map((link, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton
+                  color="divider"
+                  disableRipple
+                  sx={{
+                    borderBottom: "0.002rem solid",
 
-        <Drawer
-          className={styles.drawer}
-          sx={{
-            "& .MuiDrawer-paper": {
-              bgcolor: "background.paper",
-              alignItems: "center",
-              width: "10rem",
-              borderLeft: "1px solid #ffffff33",
-              backdropFilter: "blur(5px)",
-            },
-          }}
-          variant="permanent"
-          anchor="right"
-        >
-          <Toolbar className={styles.toolbar}>
-            <List className={styles.list}>
-              <ListItem className={styles.imageContainer}>
-                <Image src={logo} alt="/" />
+                    "&.MuiButtonBase-root:hover": {},
+                  }}
+                  disableTouchRipple
+                  LinkComponent={NextLink}
+                  path={path}
+                  href={link.path}
+                  // router.push(`link.route`, undefined, { shallow: true })
+                  className={styles.btn}
+                >
+                  <Typography
+                    fontSize={18}
+                    fontWeight={400}
+                    className={styles.text}
+                  >
+                    {link.title}
+                  </Typography>
+                </ListItemButton>
               </ListItem>
-              <Divider />
-              {links.map((link, index) => (
-                <ListItem key={index} disablePadding>
-                  <ListItemButton className={styles.btn}>
-                    <ListItemText className={styles.text} primary={link} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-              <ButtonGroup />
-            </List>
-            <Divider />
-          </Toolbar>
-        </Drawer>
-      )}
-    </div>
+            ))}
+            {toggle ? <LightButtonGroup /> : <DarkButtonGroup />}
+          </List>
+        </Toolbar>
+      </Drawer>
+    </>
   );
 }
 
