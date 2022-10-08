@@ -5,8 +5,8 @@ import Preview from "./TakeoverPods/TakeoverPreview";
 import OrbitController from "./OrbitControls";
 import Preview2 from "./SlickNSpan/SlickNspan";
 
-export const TakeoverModel = (props) => {
-  const preview = useRef();
+export const takeovermodel = () => {
+  // const preview = useRef();
 
   return (
     <Canvas
@@ -23,12 +23,12 @@ export const TakeoverModel = (props) => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview ref={preview} />
+      <Preview />
     </Canvas>
   );
 };
-export const SlickModel = (props) => {
-  const preview2 = useRef();
+export const slickmodel = () => {
+  // const preview2 = useRef();
 
   return (
     <Canvas
@@ -45,7 +45,7 @@ export const SlickModel = (props) => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview2 ref={preview2} />
+      <Preview2 />
     </Canvas>
   );
 };
