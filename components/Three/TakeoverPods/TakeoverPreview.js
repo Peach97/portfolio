@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 export function Model(props, ref) {
   const group = useRef();
   const { nodes, materials } = useGLTF(
-    "models/takeoverpreview.glb"
+    "/models/TakeoverPreview.glb"
   );
   return (
     <group ref={group} {...props} dispose={null}>
@@ -30,5 +30,5 @@ export function Model(props, ref) {
   );
 }
 
-useGLTF.preload("models/takeoverpreview.glb");
+useGLTF.preload("/models/TakeoverPreview.glb");
 export default forwardRef(Model);
