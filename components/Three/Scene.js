@@ -28,7 +28,6 @@ export const TakeoverModel = () => {
   );
 };
 export const SlickModel = () => {
-  // const preview2 = useRef();
 
   return (
     <Canvas
