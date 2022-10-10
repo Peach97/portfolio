@@ -77,8 +77,8 @@ export default class Controls {
     //Desktop
     mm.add("(min-width: 969px)", () => {
       this.room.scale.set(0.75, 0.5625, 0.75);
-      this.rectLight.width = 15;
-      this.rectLight.height = 35;
+      // this.rectLight.width = 15;
+      // this.rectLight.height = 35;
       this.orthographicCamera.position.copy(initialCameraPosition);
       this.room.position.set(0, 0, 0);
       this.floor.position.y = -100;

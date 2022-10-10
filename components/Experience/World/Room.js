@@ -46,6 +46,20 @@ export default class Room extends EventEmitter {
   }
 
   setModel() {
+    const rectLightPosition = new THREE.Vector3(-25, 20, 0);
+    const width = 15;
+    const height = 35;
+    const intensity = 10;
+    const rectLight = new THREE.RectAreaLight(
+      "#efc070",
+      intensity,
+      width,
+      height
+    );
+    rectLight.position.copy(rectLightPosition);
+    rectLight.rotation.x = -Math.PI / 2;
+    rectLight.rotation.z = Math.PI / 4;
+    // initializing lamp light
     this.actualRoom.children.forEach((child) => {
       child.castShadow = true;
       child.receiveShadow = true;
@@ -63,35 +77,22 @@ export default class Room extends EventEmitter {
           map: this.resources.items.screen,
         });
       }
+
       //animated screen in contact section
       if (child.name === "Toolbox") {
         this.toolbox = child;
         // console.log(this.toolbox);
       }
-      const rectLightPosition = new THREE.Vector3(-25, 20, 0);
-
-      const width = 15;
-      const height = 35;
-      const intensity = 5;
-      const rectLight = new THREE.RectAreaLight(
-        "#efc070",
-        intensity,
-        width,
-        height
-      );
-      rectLight.position.copy(rectLightPosition);
-      rectLight.rotation.x = -Math.PI / 2;
-      rectLight.rotation.z = Math.PI / 4;
-      this.actualRoom.add(rectLight);
-      //initializing lamp light
-      this.roomChildren["rectLight"] = rectLight;
       this.roomChildren[child.name.toLowerCase()] = child;
-      this.actualRoom.scale.set(0.75, 0.5625, 0.75);
-      this.actualRoom.position.set(0, 0, 0);
       // console.log(this.room)
       //setting room model scale and location
     });
-      this.scene.add(this.actualRoom);
+
+    this.roomChildren["rectLight"] = rectLight;
+    this.actualRoom.add(rectLight);
+    this.actualRoom.scale.set(0.75, 0.5625, 0.75);
+    this.actualRoom.position.set(0, 0, 0);
+    this.scene.add(this.actualRoom);
   }
 
   setAnimation() {
