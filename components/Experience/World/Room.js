@@ -88,9 +88,10 @@ export default class Room extends EventEmitter {
       this.roomChildren[child.name.toLowerCase()] = child;
       this.actualRoom.scale.set(0.75, 0.5625, 0.75);
       this.actualRoom.position.set(0, 0, 0);
-      this.scene.add(this.actualRoom);
+      // console.log(this.room)
       //setting room model scale and location
     });
+      this.scene.add(this.actualRoom);
   }
 
   setAnimation() {
@@ -128,12 +129,12 @@ export default class Room extends EventEmitter {
       let i = 0;
       i < this.intersects.length;
       i++;
-      this.open = this.mixer.clipAction(this.room.animations[1]);
+      this.open = this.mixer.clipAction(this.room.animations[7]);
       this.open.setLoop(THREE.LoopOnce);
       this.open.clampWhenFinished = true;
       this.open.enabled = true;
       //lid opening animation
-      this.open2 = this.mixer.clipAction(this.room.animations[2]);
+      this.open2 = this.mixer.clipAction(this.room.animations[5]);
       this.open2.setLoop(THREE.LoopOnce);
       this.open2.clampWhenFinished = true;
       //toolbox rising animation
