@@ -23,12 +23,12 @@ export const TakeoverModel = () => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview ref={preview}/>
+      <Preview ref={preview} />
     </Canvas>
   );
 };
 export const SlickModel = () => {
-  // const preview2 = useRef();
+  const preview2 = useRef();
 
   return (
     <Canvas
@@ -45,7 +45,7 @@ export const SlickModel = () => {
 
       <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
       <OrbitController />
-      <Preview2 ref={preview2}/>
+      <Preview2 ref={preview2} />
     </Canvas>
   );
 };

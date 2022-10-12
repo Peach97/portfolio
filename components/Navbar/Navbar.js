@@ -61,26 +61,7 @@ const Navbar = (props) => {
             <LinkedInIcon />
           </IconButton>
           {page ? <BackButton /> : null}
-
-          {/* <Typography
-            pl="1rem"
-            color="text.primary"
-            fontWeight={100}
-            fontSize={14}
-          >
-            Cameron Petrie
-          </Typography>
-          <Typography
-            pl="1rem"
-            color="text.primary"
-            fontWeight={200}
-            fontSize={16}
-          >
-            PORTFOLIO
-          </Typography> */}
-          {/* {!toggle ? <LogoButtonBlack /> : <LogoButtonWhite />} */}
           <ToggleButton toggle={toggle} setToggle={setToggle} />
-          {/* <LogoButton /> */}
         </Toolbar>
       </AppBar>
     </Box>

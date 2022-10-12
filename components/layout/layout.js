@@ -27,7 +27,6 @@ const Main = ({ children, toggle, setToggle, page, router }) => {
       </Box>
       <Box toggle={toggle} router={router} className={styles.container}>
         {children}
-        {/* <Footer page={page} toggle={toggle} /> */}
       </Box>
     </Box>
   );

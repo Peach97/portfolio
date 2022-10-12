@@ -32,20 +32,6 @@ function Skills({ toggle }) {
   return (
     <>
       <Box className="skills-container">
-        {/* <Paper
-          className={styles.skillsPaper}
-          sx={{ color: "text.primary", bgcolor: "background.transparent" }}
-          elevation={4}
-        > */}
-        {/* <Typography
-          variant="h3"
-          gutterBottom
-          fontWeight={800}
-          className={styles.aboutHeading}
-        >
-          Skills
-        </Typography>
-        <Divider sx={{ margin: "0.5rem", borderBottomWidth: "2px" }} /> */}
         <Typography
           variant="h5"
           component="div"
@@ -74,15 +60,6 @@ function Skills({ toggle }) {
             </motion.div>
           ))}
         </Typography>
-        {/* <Divider sx={{ margin: "0.5rem", borderBottomWidth: "2px" }} />
-        <Typography
-          variant="h4"
-          fontWeight={800}
-          className={styles.aboutHeading}
-        >
-          Tools
-        </Typography>
-        <Divider sx={{ margin: "0.5rem", borderBottomWidth: "2px" }} /> */}
         {tools.map((tool, index) => (
           <motion.div
             key={index}
@@ -104,7 +81,6 @@ function Skills({ toggle }) {
             </Typography>
           </motion.div>
         ))}
-        {/* </Paper> */}
       </Box>
     </>
   );

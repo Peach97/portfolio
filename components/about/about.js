@@ -4,9 +4,6 @@ import styles from "../../styles/Card.module.css";
 import { LogoButtonWhite, LogoButtonBlack } from "../Navbar/MenuButton";
 
 const AboutCard = ({ toggle }) => {
-  // const [open, setOpen] = useState(null);
-  // const scrollRef = useRef(null);
-
   return (
     <>
       <Box className={styles.aboutContainer}>
@@ -15,15 +12,6 @@ const AboutCard = ({ toggle }) => {
           sx={{ color: "text.primary", bgcolor: "background.transparent" }}
           elevation={4}
         >
-          {/* <Typography
-            className={styles.aboutHeading}
-            fontWeight={800}
-            variant="h4"
-            gutterBottom
-          >
-            Click the toolbox to check out my skills!
-          </Typography> */}
-          {/* <Divider sx={{ marginBottom: "2.5rem", borderBottomWidth: "2px" }} /> */}
           <Typography variant="subtitle" className={styles.aboutText}>
             I’m a web developer that designs, builds, and deploys standout web
             applications. My passion for learning, coupled with numerous
