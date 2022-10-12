@@ -1,18 +1,24 @@
 import "../styles/globals.css";
-import { createTheme } from "@mui/material";
-import { ThemeProvider } from "@mui/material";
 import React, { useState, useEffect, useContext } from "react";
 import LoaderConfig from "../components/Loader/loader-config";
 import Layout from "../components/layout/layout";
-import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggler from "../components/lib/theme";
 import { CssBaseline } from "@mui/material";
 import WorkContext from "../components/context";
+import { CacheProvider } from "@emotion/react";
+import createEmotionCache from "../components/utils/createEmotionCache";
 
+const clientSideEmotionCache = createEmotionCache();
 if (typeof window !== "undefined") {
   window.history.scrollRestoration = "manual";
 }
-function MyApp({ Component, pageProps, router }) {
+function MyApp({
+  Component,
+  pageProps,
+  emotionCache = clientSideEmotionCache,
+  router,
+}) {
+
   const [value, setValue] = useState();
   const context = useContext(WorkContext);
   //Works page toggler
@@ -46,18 +52,19 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
-      <ThemeToggler toggle={toggle} setToggle={setToggle}>
-        <CssBaseline />
-        {loading ? (
-          <LoaderConfig />
-        ) : (
-          <Layout
-            toggle={toggle}
-            setToggle={setToggle}
-            page={page}
-            router={router}
-          >
-            {/* <AnimatePresence>
+      <CacheProvider value={emotionCache}>
+        <ThemeToggler toggle={toggle} setToggle={setToggle}>
+          <CssBaseline />
+          {loading ? (
+            <LoaderConfig />
+          ) : (
+            <Layout
+              toggle={toggle}
+              setToggle={setToggle}
+              page={page}
+              router={router}
+            >
+              {/* <AnimatePresence>
               {showPage && (
                 <motion.div
                 variants={containerVariants}
@@ -66,24 +73,25 @@ function MyApp({ Component, pageProps, router }) {
                 animate="visible"
                 exit="exit"
               > */}
-            <WorkContext.Provider value={{ value, setValue }}>
-              <Component
-                path={router.asPath}
-                router={router}
-                setPage={setPage}
-                toggle={toggle}
-                setToggle={setToggle}
-                {...pageProps}
-                key={router.route}
-              />
-            </WorkContext.Provider>
+              <WorkContext.Provider value={{ value, setValue }}>
+                <Component
+                  path={router.asPath}
+                  router={router}
+                  setPage={setPage}
+                  toggle={toggle}
+                  setToggle={setToggle}
+                  {...pageProps}
+                  key={router.route}
+                />
+              </WorkContext.Provider>
 
-            {/* </motion.div>
+              {/* </motion.div>
               )}
             </AnimatePresence> */}
-          </Layout>
-        )}
-      </ThemeToggler>
+            </Layout>
+          )}
+        </ThemeToggler>
+      </CacheProvider>
     </>
   );
 }
