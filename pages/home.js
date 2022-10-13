@@ -8,6 +8,7 @@ import AboutCard from "../components/about/about";
 import Skills from "../components/about/skills";
 import WorksCard from "../components/works/cards";
 import ContactCard from "../components/contact/card";
+import Footer from "../components/footer/footer";
 
 export default function HeroSection({ toggle, path }) {
   useEffect(() => {
@@ -111,7 +112,10 @@ export default function HeroSection({ toggle, path }) {
       >
         <ContactCard />
       </Box>
-      <Box className="fifth-move section-margin"></Box>
+      <Box
+        sx={{ alignItems: "end", display: "flex" }}
+        className="fifth-move section-margin"
+      ></Box>
     </>
   );
 }

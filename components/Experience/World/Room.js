@@ -92,7 +92,6 @@ export default class Room extends EventEmitter {
     this.actualRoom.add(rectLight);
     this.actualRoom.scale.set(0.75, 0.5625, 0.75);
     this.actualRoom.position.set(0, 0, 0);
-    console.log(this.room);
     this.scene.add(this.actualRoom);
   }
 
