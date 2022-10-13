@@ -48,8 +48,8 @@ export default class Room extends EventEmitter {
   setModel() {
     const rectLightPosition = new THREE.Vector3(-25, 20, 0);
     const width = 15;
-    const height = 35;
-    const intensity = 10;
+    const height = 25;
+    const intensity = 15;
     const rectLight = new THREE.RectAreaLight(
       "#efc070",
       intensity,
@@ -83,6 +83,19 @@ export default class Room extends EventEmitter {
         this.toolbox = child;
         // console.log(this.toolbox);
       }
+      child.scale.set(0, 0, 0);
+      if (child.name === "Preloader") {
+        // child.scale.set(1, 1, 1);
+        child.position.set(0, -100, 0);
+        // child.rotation.y = Math.PI / 4;
+      }
+      if (child.name === "Preloader_Bubble") {
+        // child.scale.set(1, 1, 1);
+        child.castShadow = false;
+        child.receiveShadow = false;
+        child.position.set(0, -100, 0);
+        // child.rotation.y = Math.PI / 4;
+      }
       this.roomChildren[child.name.toLowerCase()] = child;
       // console.log(this.room)
       //setting room model scale and location
@@ -92,6 +105,7 @@ export default class Room extends EventEmitter {
     this.actualRoom.add(rectLight);
     this.actualRoom.scale.set(0.75, 0.5625, 0.75);
     this.actualRoom.position.set(0, 0, 0);
+    console.log(this.room);
     this.scene.add(this.actualRoom);
   }
 
@@ -130,12 +144,12 @@ export default class Room extends EventEmitter {
       let i = 0;
       i < this.intersects.length;
       i++;
-      this.open = this.mixer.clipAction(this.room.animations[8]);
+      this.open = this.mixer.clipAction(this.room.animations[9]);
       this.open.setLoop(THREE.LoopOnce);
       this.open.clampWhenFinished = true;
       this.open.enabled = true;
       //lid opening animation
-      this.open2 = this.mixer.clipAction(this.room.animations[6]);
+      this.open2 = this.mixer.clipAction(this.room.animations[7]);
       this.open2.setLoop(THREE.LoopOnce);
       this.open2.clampWhenFinished = true;
       //toolbox rising animation
