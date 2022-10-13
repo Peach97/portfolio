@@ -7,9 +7,6 @@ import Image from "next/image";
 import Form from "./form";
 
 const ContactCard = ({ toggle }) => {
-  // const [open, setOpen] = useState(null);
-  // const scrollRef = useRef(null);
-
   return (
     <>
       <Box

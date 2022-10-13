@@ -82,6 +82,7 @@ export default class Controls {
       this.orthographicCamera.position.copy(initialCameraPosition);
       this.room.position.set(0, 0, 0);
       this.floor.position.y = -100;
+      this.floor.rotation.x = -Math.PI / 2;
 
       // console.log("fired desktop");
       //First move section
@@ -149,7 +150,7 @@ export default class Controls {
           this.orthographicCamera.position,
           {
             x: 28 * Math.sin(0.05 * Math.PI),
-            y: 4.5,
+            y: 5,
             z: 22 * Math.cos(0.05 * Math.PI),
           },
           "same"
@@ -157,13 +158,13 @@ export default class Controls {
         .to(
           this.room.position,
           {
-            x: -150,
-            y: 0,
+            x: -165,
+            y: -10,
           },
           "same"
         )
-        .to(this.room.scale, { x: 2, y: 1.5, z: 2 }, "same")
-        .to(this.floor.position, { y: -250 }, "same");
+        .to(this.room.scale, { x: 1.65, y: 1.237, z: 1.65 }, "same")
+        .to(this.floor.position, { y: -205 }, "same");
       //Fourth Move
       this.fourthMoveTimeline = new gsap.timeline({
         scrollTrigger: {
@@ -192,7 +193,7 @@ export default class Controls {
         scrollTrigger: {
           trigger: ".fifth-move",
           start: "top top",
-          end: "+=2500",
+          end: "bottom bottom",
           scrub: 0.6,
           invalidateOnRefresh: true,
         },
@@ -209,9 +210,9 @@ export default class Controls {
         .to(
           this.orthographicCamera.position,
           {
-            x: -1.5058850000000066,
-            y: 1500,
-            z: 0.08354800000000026,
+            x: 24 * Math.sin(0.2 * Math.PI),
+            y: 10,
+            z: 22 * Math.cos(0.2 * Math.PI),
           },
           "same"
         )

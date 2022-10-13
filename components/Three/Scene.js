@@ -6,8 +6,6 @@ import OrbitController from "./OrbitControls";
 import Preview2 from "./SlickNSpan/SlickNspan";
 
 export const TakeoverModel = () => {
-  const preview = useRef();
-
   return (
     <Canvas
       style={{
@@ -28,7 +26,6 @@ export const TakeoverModel = () => {
   );
 };
 export const SlickModel = () => {
-
   return (
     <Canvas
       style={{

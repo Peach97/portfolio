@@ -23,63 +23,63 @@ export const StyledIconButton = styled(IconButton)`
   }
 `;
 
-export const MenuButton = ({ setOpenNav, open, setOpen, openNav }) => {
-  const theme = useTheme;
-  return (
-    <Box
-      color="divider"
-      sx={{
-        height: "2.5rem",
-        padding: "0 1rem 0 0",
-        display: "flex",
-        justifyContent: "center",
-        borderRight: "0.07rem solid ",
-      }}
-    >
-      <StyledButton
-        sx={{
-          color: "text.primary",
-          borderRadius: "8px",
-        }}
-        onClick={() => {
-          setOpen(true);
-          setOpenNav(!openNav);
-        }}
-      >
-        <Hamburger
-          styles={{ color: "inherit" }}
-          direction="left"
-          size={18}
-          duration={0.6}
-          rounded
-          toggled={open}
-          toggle={setOpen}
-        />
-        <Typography color="text.primary" fontWeight={100} fontSize={16}>
-          MENU
-        </Typography>
-      </StyledButton>
-    </Box>
-  );
-};
+// export const MenuButton = ({ setOpenNav, open, setOpen, openNav }) => {
+//   const theme = useTheme;
+//   return (
+//     <Box
+//       color="divider"
+//       sx={{
+//         height: "2.5rem",
+//         padding: "0 1rem 0 0",
+//         display: "flex",
+//         justifyContent: "center",
+//         borderRight: "0.07rem solid ",
+//       }}
+//     >
+//       <StyledButton
+//         sx={{
+//           color: "text.primary",
+//           borderRadius: "8px",
+//         }}
+//         onClick={() => {
+//           setOpen(true);
+//           setOpenNav(!openNav);
+//         }}
+//       >
+//         <Hamburger
+//           styles={{ color: "inherit" }}
+//           direction="left"
+//           size={18}
+//           duration={0.6}
+//           rounded
+//           toggled={open}
+//           toggle={setOpen}
+//         />
+//         <Typography color="text.primary" fontWeight={100} fontSize={16}>
+//           MENU
+//         </Typography>
+//       </StyledButton>
+//     </Box>
+//   );
+// };
 
-export const CloseButton = ({ setOpenNav, open, setOpen, openNav }) => {
-  return (
-    <StyledButton
-      sx={{ margin: "0.5rem 1rem 0.5rem auto", color: "text.primary" }}
-      disableRipple
-      onClick={() => {
-        setOpen(false);
-        setOpenNav(!openNav);
-      }}
-    >
-      <Typography fontSize={12} fontWeight={400} pr={0}>
-        CLOSE
-      </Typography>
-      <CloseIcon />
-    </StyledButton>
-  );
-};
+// export const CloseButton = ({ setOpenNav, open, setOpen, openNav }) => {
+//   return (
+//     <StyledButton
+//       sx={{ margin: "0.5rem 1rem 0.5rem auto", color: "text.primary" }}
+//       disableRipple
+//       onClick={() => {
+//         setOpen(false);
+//         setOpenNav(!openNav);
+//       }}
+//     >
+//       <Typography fontSize={12} fontWeight={400} pr={0}>
+//         CLOSE
+//       </Typography>
+//       <CloseIcon />
+//     </StyledButton>
+//   );
+// };
 
 export const LogoButtonWhite = (props) => {
   return (

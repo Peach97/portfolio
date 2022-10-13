@@ -18,6 +18,7 @@ function MyApp({
   emotionCache = clientSideEmotionCache,
   router,
 }) {
+  //emotionCache helps MaterialUI sx CSS to run correctly
 
   const [value, setValue] = useState();
   const context = useContext(WorkContext);
@@ -64,15 +65,6 @@ function MyApp({
               page={page}
               router={router}
             >
-              {/* <AnimatePresence>
-              {showPage && (
-                <motion.div
-                variants={containerVariants}
-                transition={{ x: { duration: 1 } }}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              > */}
               <WorkContext.Provider value={{ value, setValue }}>
                 <Component
                   path={router.asPath}
@@ -84,10 +76,6 @@ function MyApp({
                   key={router.route}
                 />
               </WorkContext.Provider>
-
-              {/* </motion.div>
-              )}
-            </AnimatePresence> */}
             </Layout>
           )}
         </ThemeToggler>
