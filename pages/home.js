@@ -29,15 +29,20 @@ export default function HeroSection({ toggle, path }) {
           animate={{ y: ["5%", "-5%"] }}
           className="scroll-btn-left"
         >
-          <ScrollButton />
+          <div className="arrow-div-left">
+            <ScrollButton />
+          </div>
         </motion.div>
         <motion.div
           transition={bounceTransition}
           animate={{ y: ["5%", "-5%"] }}
           className="scroll-btn-right"
         >
-          <ScrollButton />
+          <div className="arrow-div-right">
+            <ScrollButton />
+          </div>
         </motion.div>
+
         <div className="hero-wrapper">
           <div className="experience">
             <canvas className="experience-canvas"></canvas>
