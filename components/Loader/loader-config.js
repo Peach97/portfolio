@@ -6,31 +6,33 @@ import { Loader } from "./loading";
 import { Typography } from "@mui/material";
 import LinearWithValueLabel from "./progress";
 
-export default function LoaderConfig() {
+export default function LoaderConfig({ loading }) {
   return (
     <>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         <motion.div
           transition={{ x: { duration: 0.5 } }}
           initial={{ x: 500, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -500, opacity: 0 }}
-        >
-          <Box className={styles.box}>
-            <Loader />
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1.5 }}
-            >
-              <Typography variant="h5" color="inherit" component="div">
-                Cameron Petrie
-              </Typography>
-            </motion.div>
-            <LinearWithValueLabel />
-          </Box>
-        </motion.div>
-      </AnimatePresence>
+        > */}
+      <div className="preloader">
+        <Box className="loader">
+          <Loader />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 1.5 }}
+          >
+            <Typography variant="h5" color="inherit" component="div">
+              Cameron Petrie
+            </Typography>
+          </motion.div>
+          <LinearWithValueLabel />
+        </Box>
+      </div>
+      {/* </motion.div>
+      </AnimatePresence> */}
     </>
   );
 }

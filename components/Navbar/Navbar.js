@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/Navbar.module.css";
 import { AppBar, Toolbar, Box } from "@mui/material";
 import { BackButton } from "./MenuButton";
@@ -17,7 +17,9 @@ const Navbar = (props) => {
       setColor(false);
     }
   };
-  window.addEventListener("scroll", changeColor);
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+  });
   // const theme = useTheme();
   const [openNav, setOpenNav] = useState(false);
   //side nav drawer open
