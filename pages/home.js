@@ -21,7 +21,7 @@ export default function HeroSection({ toggle, path }) {
     <>
       <Box
         className="hero"
-        component="section"
+        component="div"
         sx={{ bgcolor: "background.default" }}
       >
         <motion.div
@@ -43,8 +43,9 @@ export default function HeroSection({ toggle, path }) {
             <canvas className="experience-canvas"></canvas>
           </div>
 
-          <Box className="hero-main" color="text.primary">
+          <Box component="div" className="hero-main" color="text.primary">
             <Typography
+              component="div"
               className="hero-main-description"
               textTransform="none"
               fontWeight={800}
@@ -52,6 +53,7 @@ export default function HeroSection({ toggle, path }) {
               Hello,
             </Typography>
             <Typography
+              component="div"
               textTransform="none"
               className="hero-main-subtitle"
               fontWeight={800}
@@ -59,11 +61,12 @@ export default function HeroSection({ toggle, path }) {
               I&apos;m Cameron.
             </Typography>
             <Typography
+              component="div"
               textTransform="none"
               className="hero-main-title"
               fontWeight={400}
             >
-              I do full stack development, design, and a bit of 3D modeling.
+              I do full stack development, design, and 3D modeling.
             </Typography>
           </Box>
         </div>
