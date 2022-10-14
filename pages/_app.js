@@ -30,54 +30,71 @@ function MyApp({
   //loading handler
   const [page, setPage] = useState(false);
   //Navbar/footer toggler
+
   useEffect(() => {
-    const handleStart = (url) => url !== router.asPath && setLoading(true);
-    const handleComplete = (url) =>
-      setTimeout(() => {
-        setShowPage(true);
-        setLoading(false);
-      }, 5000);
-    //loading timeout (5s)
-    // setLoading(false) &&
-    // url === router.asPath && setTimeout(() => setLoading(false), 5000);
-    router.events.on("routeChangeStart", handleStart());
+    const handleComplete = () => {
+      if (window.location.href.indexOf("slick") > -1) {
+        setTimeout(() => {
+          document.querySelector(".preloader").classList.add("hidden");
+        }, 5000);
+      }
+      if (window.location.href.indexOf("takeover-pods") > -1) {
+        setTimeout(() => {
+          document.querySelector(".preloader").classList.add("hidden");
+        }, 5000);
+      }
+    };
     router.events.on("routeChangeComplete", handleComplete());
     router.events.on("routeChangeError", handleComplete());
     return () => {
-      router.events.off("routeChangeStart", handleStart());
       router.events.off("routeChangeComplete", handleComplete());
       router.events.off("routeChangeError", handleComplete());
     };
   }, [router.asPath, router.events]);
-  //runs whenever a router event occurs
+  // useEffect(() => {
+  //   const handleStart = (url) => url !== router.asPath && setLoading(true);
+  //   const handleComplete = (url) =>
+  //     setTimeout(() => {
+  //       setShowPage(true);
+  //     }, 5000);
+  //   //loading timeout (5s)
+  //   // setLoading(false) &&
+  //   // url === router.asPath && setTimeout(() => setLoading(false), 5000);
+  //   router.events.on("routeChangeStart", handleStart());
+  //   router.events.on("routeChangeComplete", handleComplete());
+  //   router.events.on("routeChangeError", handleComplete());
+  //   return () => {
+  //     router.events.off("routeChangeStart", handleStart());
+  //     router.events.off("routeChangeComplete", handleComplete());
+  //     router.events.off("routeChangeError", handleComplete());
+  //   };
+  // }, [router.asPath, router.events]);
+  // runs whenever a router event occurs
 
   return (
     <>
+      <LoaderConfig loading={loading} />
       <CacheProvider value={emotionCache}>
         <ThemeToggler toggle={toggle} setToggle={setToggle}>
           <CssBaseline />
-          {loading ? (
-            <LoaderConfig />
-          ) : (
-            <Layout
-              toggle={toggle}
-              setToggle={setToggle}
-              page={page}
-              router={router}
-            >
-              <WorkContext.Provider value={{ value, setValue }}>
-                <Component
-                  path={router.asPath}
-                  router={router}
-                  setPage={setPage}
-                  toggle={toggle}
-                  setToggle={setToggle}
-                  {...pageProps}
-                  key={router.route}
-                />
-              </WorkContext.Provider>
-            </Layout>
-          )}
+          <Layout
+            toggle={toggle}
+            setToggle={setToggle}
+            page={page}
+            router={router}
+          >
+            <WorkContext.Provider value={{ value, setValue }}>
+              <Component
+                path={router.asPath}
+                router={router}
+                setPage={setPage}
+                toggle={toggle}
+                setToggle={setToggle}
+                {...pageProps}
+                key={router.route}
+              />
+            </WorkContext.Provider>
+          </Layout>
         </ThemeToggler>
       </CacheProvider>
     </>

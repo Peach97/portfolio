@@ -7,6 +7,27 @@ body {
 
 }
 
+.preloader {
+  z-index: 999999999;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #031048;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999999999;
+}
+
+.hidden {
+  display: none;
+}
+
 #map {
   height: 100rem;
   width: 100%;

@@ -29,6 +29,7 @@ export default class Preloader extends EventEmitter {
     this.title = document.querySelector(".hero-main-title");
     this.arrowLeft = document.querySelector(".arrow-div-left");
     this.arrowRight = document.querySelector(".arrow-div-right");
+    this.loader = document.querySelector(".preloader");
     this.room = this.experience.world.room.actualRoom;
     this.roomChildren = this.experience.world.room.roomChildren;
     this.emit("enablecontrols");
@@ -61,6 +62,7 @@ export default class Preloader extends EventEmitter {
         this.wheelOpt
       ); // modern standard
       this.timeline = new gsap.timeline();
+      this.timeline.set(this.loader, { opacity: 1 });
       this.timeline.set(this.description, { scale: 0 });
       this.timeline.set(this.subtitle, { scale: 0 });
       this.timeline.set(this.title, { scale: 0 });
@@ -68,6 +70,13 @@ export default class Preloader extends EventEmitter {
       this.timeline.set(this.arrowRight, { scale: 0 });
       if (this.device === "desktop") {
         this.timeline
+          .to(this.loader, {
+            opacity: 0,
+            delay: 4,
+            onComplete: () => {
+              document.querySelector(".preloader").classList.add("hidden");
+            },
+          })
           .to(this.roomChildren.preloader.scale, {
             x: 1,
             y: 1,
