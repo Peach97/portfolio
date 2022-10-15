@@ -156,23 +156,16 @@ export default class Preloader extends EventEmitter {
             },
             "same"
           )
-          .to(this.roomChildren.room001.scale, {
-            x: 1,
-            y: 1,
-            z: 1,
-            ease: "back.out(1)",
-            duration: 0.75,
-          })
           .to(
-            this.roomChildren.furniture.scale,
+            this.roomChildren.room001.scale,
             {
               x: 1,
               y: 1,
               z: 1,
               ease: "back.out(1)",
-              duration: 0.75,
+              duration: 1.1,
             },
-            ">-0.75"
+            "room"
           )
           .to(
             this.roomChildren.desk_objects.scale,
@@ -247,9 +240,9 @@ export default class Preloader extends EventEmitter {
               y: 1,
               z: 1,
               ease: "back.out(1)",
-              duration: 0.5,
+              duration: 0.75,
             },
-            ">-0.4"
+            "room"
           )
           .to(
             this.roomChildren.peachcharacter.scale,
@@ -280,9 +273,9 @@ export default class Preloader extends EventEmitter {
               y: 1,
               z: 1,
               ease: "back.out(1)",
-              duration: 0.5,
+              duration: 0.75,
             },
-            ">-0.5"
+            "room"
           )
           .to(
             this.roomChildren.tv_screen.scale,
@@ -365,24 +358,32 @@ export default class Preloader extends EventEmitter {
             duration: 1,
             ease: "back.out(2)",
           })
-          .to(this.subtitle, {
-            scale: 1,
-            duration: 1,
-            ease: "back.out(2)",
-          })
-          .to(this.title, {
-            scale: 1,
-            duration: 1,
-            ease: "back.out(2)",
-            onComplete: () => {
-              window.removeEventListener(
-                this.wheelEvent,
-                this.preventDefault,
-                this.wheelOpt
-              );
-              resolve;
+          .to(
+            this.subtitle,
+            {
+              scale: 1,
+              duration: 1,
+              ease: "back.out(2)",
             },
-          })
+            ">-.5"
+          )
+          .to(
+            this.title,
+            {
+              scale: 1,
+              duration: 1,
+              ease: "back.out(2)",
+              onComplete: () => {
+                window.removeEventListener(
+                  this.wheelEvent,
+                  this.preventDefault,
+                  this.wheelOpt
+                );
+                resolve;
+              },
+            },
+            ">-.5"
+          )
           .to(
             this.arrowLeft,
             {
