@@ -259,22 +259,9 @@ a {
 
 @media (max-width: 968px) {
 
-  /* #map {
-    margin-top: 20vh;
-    position: relative;
-    display: flex;
-    height: 250vh;
-    width: 200%;
-  } */
-
-  /* #house {
-    top: 65%;
-    left: -10%;
-  } */
-
   #second-move,
   .section-margin {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   #third-move,

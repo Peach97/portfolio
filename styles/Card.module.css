@@ -111,6 +111,10 @@
     border-radius: 16px;
 }
 
+.skillsBox {
+    display: none
+}
+
 .worksPaper {
     backdrop-filter: blur(7.5px);
     margin: 0;
@@ -140,6 +144,7 @@
 
 }
 
+
 .skills {
     display: flex;
     justify-content: center;
@@ -161,6 +166,8 @@
 
 }
 
+
+
 .aboutHeading {
     position: relative;
     line-height: 1;
@@ -174,16 +181,38 @@
         width: 100vw;
     }
 
-    .aboutHeading {
-        padding-top: 2.5rem;
+    .skillsHeading {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        line-height: 2.5;
+        text-align: center;
     }
 
+    /* .skillsHeading {
+        padding-top: 2.5rem;
+    } */
+
     .aboutPaper {
+        display: flex;
+        justify-content: center;
         height: fit-content;
+        flex-direction: column;
+        padding: 1rem 2.5rem 10rem 2.5rem;
     }
 
     .skillsPaper {
         padding-bottom: 1rem;
+    }
+
+    .skillsBox {
+        display: flex;
+        z-index: 2;
+        position: relative;
+        justify-content: center;
+        flex-direction: column;
+        height: fit-content;
+
     }
 
     .skillsContainer {
@@ -200,16 +229,18 @@
         justify-content: flex-end;
     }
 
-    .aboutPaper {
-        padding: 1rem 2.5rem 10rem 2.5rem;
-
+    .aboutText {
+        padding: 2.5rem 0 0rem 0;
+        line-height: 2
     }
 
-    .aboutText {
-        line-height: 1
+    .skillsText {
+        padding: 2.5rem 0 2.5rem 0;
+        line-height: 2
     }
 
     .contactContainer {
         width: 100vw;
     }
+
 }

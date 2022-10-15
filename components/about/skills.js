@@ -4,7 +4,7 @@ import { Typography, Paper, Divider } from "@mui/material";
 import styles from "../../styles/Card.module.css";
 import { Box } from "@mui/system";
 import { EventEmitter } from "./events";
-const skills = [
+export const skills = [
   "React",
   "JavaScript",
   "CSS",
@@ -19,7 +19,7 @@ const skills = [
   "Debugging",
   "Python",
 ];
-const tools = [
+export const tools = [
   "Github",
   "Figma",
   "Adobe Express",

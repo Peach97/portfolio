@@ -93,7 +93,7 @@ export default class Room extends EventEmitter {
         // child.scale.set(1, 1, 1);
         child.castShadow = false;
         child.receiveShadow = false;
-        child.position.set(0, -100, 0);
+        child.position.set(0, -50, 0);
         // child.rotation.y = Math.PI / 4;
       }
       this.roomChildren[child.name.toLowerCase()] = child;

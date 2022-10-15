@@ -31,6 +31,12 @@ export default class Controls {
       if (child.name === "Bubble") {
         this.bubble = child;
       }
+      if (child.name === "Toolbox") {
+        this.toolbox = child;
+      }
+      if (child.name === "ToolboxLid") {
+        this.toolboxlid = child;
+      }
     });
     this.circleFirst = this.experience.world.floor.circleFirst;
     this.circleSecond = this.experience.world.floor.circleSecond;
@@ -229,6 +235,8 @@ export default class Controls {
       this.room.position.set(-25, 0, 0);
       this.floor.position.set(0, -75, 0);
       this.bubble.scale.set(0, 0, 0);
+      this.toolbox.scale.set(0, 0, 0);
+      this.toolboxlid.scale.set(0, 0, 0);
       // console.log("fired mobile");
       //First move (mobile)
       this.sixthMoveTimeline = new gsap.timeline({

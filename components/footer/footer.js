@@ -62,7 +62,7 @@ const Footer = ({ toggle, page }) => {
           <Link
             className={styles.links}
             onClick={() => scrollTo(link.route)}
-            key={link.id}
+            key={link}
           >
             {link.title}
           </Link>
