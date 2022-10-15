@@ -113,13 +113,19 @@ export default class Preloader extends EventEmitter {
               },
             }
           )
-          .to(this.roomChildren.preloader.scale, {
-            x: 1,
-            y: 1,
-            z: 1,
-            ease: "back.out(2.5)",
-            duration: 1.25,
-          })
+          .to(this.roomChildren.preloader.position, { x: 25 }, "mobile")
+          .to(this.roomChildren.preloader_bubble.position, { x: 25 }, "mobile")
+          .to(
+            this.roomChildren.preloader.scale,
+            {
+              x: 1,
+              y: 1,
+              z: 1,
+              ease: "back.out(2.5)",
+              duration: 1.25,
+            },
+            "mobile"
+          )
           .to(this.roomChildren.preloader_bubble.scale, {
             x: 1,
             y: 1,

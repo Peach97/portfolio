@@ -90,6 +90,7 @@ export default class Controls {
       this.rectLight.width = 15;
       this.rectLight.height = 25;
       this.room.position.set(0, 0, 0);
+      this.orthographicCamera.position.copy(initialCameraPosition);
       // this.floor.position.y = -100;
       // this.floor.rotation.x = -Math.PI / 2;
 
@@ -237,6 +238,11 @@ export default class Controls {
       this.bubble.scale.set(0, 0, 0);
       this.toolbox.scale.set(0, 0, 0);
       this.toolboxlid.scale.set(0, 0, 0);
+      this.orthographicCamera.position.set(
+        24 * Math.sin(0.2 * Math.PI),
+        10,
+        22 * Math.cos(0.2 * Math.PI)
+      );
       // console.log("fired mobile");
       //First move (mobile)
       this.sixthMoveTimeline = new gsap.timeline({
@@ -279,6 +285,7 @@ export default class Controls {
         },
       })
         .to(this.room.scale, { x: 2, y: 1.5, z: 2 }, "same")
+        .to(this.floor.position, { y: -200 }, "same")
         .to(
           this.orthographicCamera.position,
           {
