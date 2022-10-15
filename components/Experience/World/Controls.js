@@ -285,6 +285,7 @@ export default class Controls {
         },
       })
         .to(this.room.scale, { x: 2, y: 1.5, z: 2 }, "same")
+        .to(this.floor.position, { y: -200 }, "same")
         .to(
           this.orthographicCamera.position,
           {
