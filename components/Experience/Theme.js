@@ -4,7 +4,7 @@ export default class Theme extends EventEmitter {
   constructor() {
     super();
 
-    this.theme = "dark";
+    this.theme = "light";
     this.toggleButton = document.querySelector(".toggle-button");
 
     this.setEventListeners();
