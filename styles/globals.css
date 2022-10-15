@@ -259,18 +259,18 @@ a {
 
 @media (max-width: 968px) {
 
-  #map {
+  /* #map {
     margin-top: 20vh;
     position: relative;
     display: flex;
     height: 250vh;
     width: 200%;
-  }
+  } */
 
-  #house {
+  /* #house {
     top: 65%;
     left: -10%;
-  }
+  } */
 
   #second-move,
   .section-margin {

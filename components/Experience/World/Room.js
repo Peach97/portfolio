@@ -49,7 +49,7 @@ export default class Room extends EventEmitter {
     const rectLightPosition = new THREE.Vector3(-25, 20, 0);
     const width = 15;
     const height = 25;
-    const intensity = 15;
+    const intensity = 25;
     const rectLight = new THREE.RectAreaLight(
       "#efc070",
       intensity,
@@ -144,12 +144,12 @@ export default class Room extends EventEmitter {
       let i = 0;
       i < this.intersects.length;
       i++;
-      this.open = this.mixer.clipAction(this.room.animations[9]);
+      this.open = this.mixer.clipAction(this.room.animations[10]);
       this.open.setLoop(THREE.LoopOnce);
       this.open.clampWhenFinished = true;
       this.open.enabled = true;
       //lid opening animation
-      this.open2 = this.mixer.clipAction(this.room.animations[7]);
+      this.open2 = this.mixer.clipAction(this.room.animations[8]);
       this.open2.setLoop(THREE.LoopOnce);
       this.open2.clampWhenFinished = true;
       //toolbox rising animation

@@ -15,7 +15,10 @@ export default class Environment {
   }
 
   setSunlight() {
-    this.sunLight = new THREE.DirectionalLight("#ffffff", 3.5);
+    const color = new THREE.Color("rgb(44, 59, 175)");
+
+    const intensity = 0.75;
+    this.sunLight = new THREE.DirectionalLight(color, intensity);
     this.sunLight.position.set(20, 500, 0);
     this.sunLight.castShadow = true;
     this.sunLight.shadow.camera.near = 0;
@@ -29,7 +32,7 @@ export default class Environment {
     //front facing sunlight
     // this.lightHelper = new THREE.DirectionalLightHelper(this.sunLight);
 
-    this.sunLight2 = new THREE.DirectionalLight("#ffffff", 3);
+    this.sunLight2 = new THREE.DirectionalLight(color, intensity);
     this.sunLight2.position.set(0, 5, -145);
     this.sunLight2.castShadow = true;
     this.sunLight2.target.position.set(5, 0, 0);
@@ -48,7 +51,7 @@ export default class Environment {
     this.scene.add(this.sunLight2.target);
     this.scene.add(this.sunLight, this.sunLight2);
 
-    this.ambientLight = new THREE.AmbientLight("#ffffff", 1.5);
+    this.ambientLight = new THREE.AmbientLight(color, 0.85);
     this.scene.add(this.ambientLight);
   }
   switchTheme(theme) {

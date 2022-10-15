@@ -9,7 +9,7 @@ const AboutCard = ({ toggle }) => {
       <Box className={styles.aboutContainer}>
         <Paper
           className={styles.aboutPaper}
-          sx={{ color: "text.primary", bgcolor: "background.transparent" }}
+          sx={{ color: "text.primary", bgcolor: "background.default" }}
           elevation={4}
         >
           <Typography variant="subtitle" className={styles.aboutText}>

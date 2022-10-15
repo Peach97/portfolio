@@ -22,7 +22,7 @@ const ContactCard = ({ toggle }) => {
           className={styles.contactPaper}
           sx={{
             color: "text.primary",
-            bgcolor: "background.transparent",
+            bgcolor: "background.default",
             height: "fit-content",
           }}
           elevation={4}

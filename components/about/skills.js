@@ -50,7 +50,6 @@ function Skills({ toggle }) {
                   padding: "0.25rem 1rem 0.25rem 1rem",
                   borderRadius: "64px",
                 }}
-                bgcolor={toggle ? "background.default" : "background.text"}
                 gutterBottom
                 variant="h5"
                 color="text.primary"
@@ -72,7 +71,6 @@ function Skills({ toggle }) {
                 padding: "0.25rem 1rem 0.25rem 1rem",
                 borderRadius: "32px",
               }}
-              bgcolor={toggle ? "background.default" : "background.text"}
               gutterBottom
               color="text.primary"
               variant="h5"

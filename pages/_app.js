@@ -23,7 +23,7 @@ function MyApp({
   const [value, setValue] = useState();
   const context = useContext(WorkContext);
   //Works page toggler
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   //Theme toggler
   const [showPage, setShowPage] = useState(false);
   const [loading, setLoading] = useState(true);
