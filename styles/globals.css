@@ -282,13 +282,13 @@ a {
   }
 
   .hero-main {
-    left: 1rem;
+    left: 2.5rem;
     bottom: 5rem;
   }
 
-  .hero-wrapper {
+  /* .hero-wrapper {
     width: calc(100% - 60px);
-  }
+  } */
 
   .hero-main-title {
     font-size: 20px;
@@ -304,10 +304,10 @@ a {
   }
 
   .scroll-btn-left {
-    bottom: 50%
+    bottom: 70%
   }
 
   .scroll-btn-right {
-    bottom: 50%
+    bottom: 70%
   }
 }
