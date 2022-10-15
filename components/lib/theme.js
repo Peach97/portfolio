@@ -24,9 +24,9 @@ const customDark = (mode) => ({
     ...(mode === "dark" && {
       background: {
         default: "#031048", // "#001224",
-        paper: "#001E3C",
-        contrast: "#c4e1ff",
-        transparent: "#4974a581",
+        paper: "#031048",
+        contrast: "#E7DECC",
+        transparent: "#0310487a",
         text: "#16385c",
         //"#6280a5", // "#002447",
       },
@@ -65,10 +65,13 @@ const customLight = (mode) => ({
     },
     ...(mode === "light" && {
       background: {
-        default: "#E7DECC", //"#dafdff", //good"#c3e2e9", //"#ffeeff", //d0a2bd //"#e0f7fa", //"#ffccbc", //"#ff7961", //"#d1c4e9",
-        paper: "#E9F3FD",
-        contrast: "#0A1929",
-        transparent: "#e9f3fd8a",
+        default: "#E7DECC",
+        default2: "#d0c8b8",
+        default3: "#b9b2a3",
+        default4: "#a29b8f", //"#dafdff", //good"#c3e2e9", //"#ffeeff", //d0a2bd //"#e0f7fa", //"#ffccbc", //"#ff7961", //"#d1c4e9",
+        paper: "#E7DECC",
+        contrast: "#031048",
+        transparent: "#e7decc82",
         text: "#d6e8fa", //"#92b0b7", //good"#97cce9", //"#bbdefb", //"#efdcd5", // "#d1c4e9", //"#e3f2fd", // "#fff7ff",
       },
       typography: {

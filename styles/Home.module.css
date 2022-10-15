@@ -109,8 +109,11 @@
 }
 
 .links {
-  font-size: 14px;
-  padding: 2.5rem
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .startFooter {

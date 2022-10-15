@@ -9,7 +9,7 @@ export default function Home({ toggle, path, setPage }) {
       <Box width="100%">
         <HeroSection path={path} toggle={toggle} setPage={setPage} />
       </Box>
-      <Footer />
+      <Footer toggle={toggle} />
     </>
   );
 }

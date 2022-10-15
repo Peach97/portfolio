@@ -1,16 +1,23 @@
 import React from "react";
 import { Box, Divider, Typography } from "@mui/material";
 import { LogoButtonBlack, LogoButtonWhite } from "../Navbar/MenuButton";
-import Link from "next/link";
 import Grid from "@mui/material/Grid";
 import { LightButtonGroup, DarkButtonGroup } from "../Navbar/ButtonGroup";
 import styles from "../../styles/Home.module.css";
+import { Link } from "@mui/material";
+
+function scrollTo(route) {
+  document.querySelector(`${route}`).scrollIntoView({
+    behavior: "smooth",
+    offsetTop: "90%",
+  });
+}
 
 const links = [
-  { title: "Home", route: "/" },
-  { title: "Work", route: "/" },
-  { title: "About", route: "/" },
-  { title: "Contact", route: "/" },
+  { title: "Home", route: ".hero-main" },
+  { title: "Work", route: ".third-move" },
+  { title: "About", route: ".second-move" },
+  { title: "Contact", route: ".fourth-move" },
 ];
 
 const Footer = ({ toggle, page }) => {
@@ -20,8 +27,8 @@ const Footer = ({ toggle, page }) => {
         display: page ? "none" : "flex",
         alignItems: "center",
         flexDirection: "column",
-        bgcolor: "background.contrast",
-        color: "background.default",
+        bgcolor: "background.default",
+        color: "background.contrast",
         height: "fit-content",
         padding: "1rem",
         width: "100%",
@@ -32,7 +39,7 @@ const Footer = ({ toggle, page }) => {
         component="div"
         sx={{ display: "flex", height: "5rem", marginBottom: "2.5rem" }}
       >
-        {toggle ? (
+        {!toggle ? (
           <LogoButtonBlack height={35} width={35} />
         ) : (
           <LogoButtonWhite height={35} width={35} />
@@ -52,15 +59,12 @@ const Footer = ({ toggle, page }) => {
         }}
       >
         {links.map((link) => (
-          <Link href={link.route} key={link.id}>
-            <a
-              className={styles.links}
-              style={{
-                textTransform: "uppercase",
-              }}
-            >
-              {link.title}
-            </a>
+          <Link
+            className={styles.links}
+            onClick={() => scrollTo(link.route)}
+            key={link.id}
+          >
+            {link.title}
           </Link>
         ))}
       </Box>
@@ -101,7 +105,7 @@ const Footer = ({ toggle, page }) => {
             sm={12}
             sx={{ justifyContent: "center", display: "flex" }}
           >
-            {!toggle ? <LightButtonGroup /> : <DarkButtonGroup />}
+            {toggle ? <LightButtonGroup /> : <DarkButtonGroup />}
           </Grid>
           <Grid
             className={styles.endFooter}

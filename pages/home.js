@@ -15,7 +15,7 @@ export default function HeroSection({ toggle, path }) {
     const experience = new Experience(
       document.querySelector(".experience-canvas")
     );
-  });
+  }, []);
 
   return (
     <>
