@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import Experience from "../components/Experience/Experience";
 import ScrollButton from "../components/StyledComponents/ScrollButton";

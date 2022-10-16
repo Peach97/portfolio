@@ -38,10 +38,65 @@ export default class Controls {
     this.circleFirst = this.experience.world.floor.circleFirst;
     this.circleSecond = this.experience.world.floor.circleSecond;
     this.circleThird = this.experience.world.floor.circleThird;
+    const { ASScroll } = require("@ashthornton/asscroll");
     const { ScrollTrigger } = require("gsap/ScrollTrigger");
     gsap.registerPlugin(ScrollTrigger);
+    if (
+      !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setSmoothScroll();
+    }
     this.setScrollTrigger();
     this.setSkills();
+  }
+
+  setASScroll() {
+    const asscroll = new ASScroll({
+      ease: 0.5,
+      disableRaf: true,
+    });
+
+    gsap.ticker.add(asscroll.update);
+
+    ScrollTrigger.defaults({
+      scroller: asscroll.containerElement,
+    });
+    ScrollTrigger.scrollerProxy(asscroll.containerElement, {
+      scrollTop(value) {
+        if (arguments.length) {
+          asscroll.currentPos = value;
+          return;
+        }
+        return asscroll.currentPos;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      fixedMarkers: true,
+    });
+
+    asscroll.on("update", ScrollTrigger.update);
+    ScrollTrigger.addEventListener("refresh", asscroll.resize);
+
+    requestAnimationFrame(() => {
+      asscroll.enable({
+        newScrollElements: document.querySelectorAll(
+          ".gsap-marker-start, .gsap-marker-end, [asscroll]"
+        ),
+      });
+    });
+    return asscroll;
+  }
+
+  setScroll() {
+    this.asscroll = this.setASScroll;
   }
 
   setSkills() {
