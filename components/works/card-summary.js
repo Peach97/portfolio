@@ -7,14 +7,13 @@ import {
   Collapse,
   IconButton,
 } from "@mui/material";
-import React, { useState, useRef, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Home.module.css";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Utilities } from "./card-items";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import WorkContext from "../context";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { horizontalBounce } from "../Transitions/transitions";
 import Link from "next/link";
@@ -35,25 +34,10 @@ const ArrowDiv = () => {
 };
 
 const WorksSummary = (props) => {
-  const context = useContext(WorkContext);
-  //card expansion description2
   const [expanded, setExpanded] = useState(null);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
-
-  const seeMore = useRef();
-  // useEffect(() => {
-  //   context.setSession(path);
-  // }, [path, context]);
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   router.push(`/`);
-  //   console.log(router.asPath);
-  // };
 
   return (
     <>
@@ -70,7 +54,6 @@ const WorksSummary = (props) => {
               }}
             >
               <div style={{ flexDirection: "column", display: "flex" }}>
-                {/* <Text variant="body1">Recent</Text> */}
                 <Text variant="h5" fontWeight={800}>
                   {props.app}
                 </Text>

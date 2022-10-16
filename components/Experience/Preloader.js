@@ -33,7 +33,6 @@ export default class Preloader extends EventEmitter {
     this.room = this.experience.world.room.actualRoom;
     this.roomChildren = this.experience.world.room.roomChildren;
     this.emit("enablecontrols");
-    console.log(this.roomChildren);
   }
 
   firstIntro() {
@@ -60,7 +59,7 @@ export default class Preloader extends EventEmitter {
         this.wheelEvent,
         this.preventDefault,
         this.wheelOpt
-      ); // modern standard
+      );
       this.timeline = new gsap.timeline();
       this.timeline.set(this.loader, { opacity: 1 });
       this.timeline.set(this.description, { scale: 0 });
@@ -176,9 +175,6 @@ export default class Preloader extends EventEmitter {
         .to(
           this.roomChildren.preloader.scale,
           {
-            // x: 0.14418604651,
-            // y: 0.50345478374,
-            // z: 0.37256133333,
             x: 0,
             y: 0,
             z: 0,
@@ -205,8 +201,6 @@ export default class Preloader extends EventEmitter {
               x: 1,
               y: 1,
               z: 1,
-              // delay: 0.5,
-              // duration: 0.25,
             },
             "room"
           )
@@ -216,9 +210,6 @@ export default class Preloader extends EventEmitter {
               x: 1,
               y: 1,
               z: 1,
-
-              // delay: 0.5,
-              // duration: 0.25,
             },
             "room"
           )
@@ -228,9 +219,6 @@ export default class Preloader extends EventEmitter {
               x: 1,
               y: 1,
               z: 1,
-
-              // delay: 0.5,
-              // duration: 0.25,
             },
             "room"
           );
@@ -449,15 +437,11 @@ export default class Preloader extends EventEmitter {
           },
           "arrow"
         );
-      // } else {
-      //   //mobile animation here
-      // }
     });
   }
 
   onClick(e) {
     if (e) {
-      console.log("event started");
       window.removeEventListener("click", this.clickEvent);
       this.playSecondIntro();
     }
@@ -473,12 +457,5 @@ export default class Preloader extends EventEmitter {
     this.secondIntro();
   }
 
-  update() {
-    // if (this.moveFlag) {
-    //     this.move();
-    // }
-    // if (this.scaleFlag) {
-    //     this.scale();
-    // }
-  }
+  update() {}
 }

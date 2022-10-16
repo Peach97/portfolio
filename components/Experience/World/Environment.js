@@ -7,10 +7,6 @@ export default class Environment {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.camera = this.experience.camera.orthographicCamera;
-    // this.obj = {
-    //   colorObj: { r: 0, g: 0, b: 0 },
-    //   intensity: 3,
-    // };
     this.setSunlight();
   }
 
@@ -30,8 +26,6 @@ export default class Environment {
     this.sunLight.shadow.bias = -0.005;
     this.sunLight.shadow.mapSize.set(2048, 2048);
     //front facing sunlight
-    // this.lightHelper = new THREE.DirectionalLightHelper(this.sunLight);
-
     this.sunLight2 = new THREE.DirectionalLight(color, intensity);
     this.sunLight2.position.set(0, 5, -145);
     this.sunLight2.castShadow = true;
@@ -45,17 +39,12 @@ export default class Environment {
     this.sunLight2.shadow.bias = -0.005;
     this.sunLight2.shadow.mapSize.set(1024, 1024);
     //back facing sunlight
-
-    // this.helper = new THREE.CameraHelper(this.sunLight.shadow.camera, 0xf0000);
-    // this.scene.add(this.helper);
     this.scene.add(this.sunLight2.target);
     this.scene.add(this.sunLight, this.sunLight2);
-
     this.ambientLight = new THREE.AmbientLight(color, 0.85);
     this.scene.add(this.ambientLight);
   }
   switchTheme(theme) {
-    // console.log(this.sunLight);
     if (theme === "light") {
       GSAP.to(this.sunLight.color, {
         r: 0.17254901960784313,

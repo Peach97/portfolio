@@ -8,7 +8,6 @@ import AboutCard from "../components/about/about";
 import Skills from "../components/about/skills";
 import WorksCard from "../components/works/cards";
 import ContactCard from "../components/contact/card";
-import Footer from "../components/footer/footer";
 
 export default function HeroSection({ toggle, path }) {
   useEffect(() => {

@@ -1,34 +1,39 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Typography, Paper, Divider } from "@mui/material";
+import { Typography } from "@mui/material";
 import styles from "../../styles/Card.module.css";
 import { Box } from "@mui/system";
-import { EventEmitter } from "./events";
+
 export const skills = [
-  "React",
+  "ReactJS",
   "JavaScript",
   "CSS",
   "HTML",
   "MaterialUI",
   "ExpressJS",
   "MongoDB",
-  "NodeJS",
+  "Node JS",
   "Bootstrap",
   "ThreeJS",
-  "JQuery",
-  "Debugging",
+  "jQuery",
   "Python",
+  "Debugging",
 ];
 export const tools = [
   "Github",
   "Figma",
-  "Adobe Express",
+  "Adobe Creative Cloud",
   "Adobe Photoshop",
+  "Jira/Confluence",
+  "GSAP",
   "GIMP",
+  "Framer/Motion",
   "Blender",
+  "Various Deployment Pipelines",
   "APIs",
 ];
-function Skills({ toggle }) {
+
+function Skills() {
   return (
     <>
       <Box className="skills-container">

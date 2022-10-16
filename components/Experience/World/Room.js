@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { gsap as GSAP } from "gsap";
 import Experience from "../Experience";
 import { EventEmitter } from "events";
+
 export default class Room extends EventEmitter {
   constructor() {
     super();
@@ -70,42 +71,33 @@ export default class Room extends EventEmitter {
           groupchild.receiveShadow = true;
         });
       }
-
       if (child.name === "TV_Screen") {
         child.scale.x = -1;
         child.material = new THREE.MeshBasicMaterial({
           map: this.resources.items.screen,
         });
       }
-
       //animated screen in contact section
       if (child.name === "Toolbox") {
         this.toolbox = child;
-        // console.log(this.toolbox);
       }
-      child.scale.set(0, 0, 0);
       if (child.name === "Preloader") {
-        // child.scale.set(1, 1, 1);
         child.position.set(0, -100, 0);
-        // child.rotation.y = Math.PI / 4;
       }
       if (child.name === "Preloader_Bubble") {
-        // child.scale.set(1, 1, 1);
         child.castShadow = false;
         child.receiveShadow = false;
         child.position.set(0, -50, 0);
-        // child.rotation.y = Math.PI / 4;
       }
+      child.scale.set(0, 0, 0);
+      //scaling for preloader
       this.roomChildren[child.name.toLowerCase()] = child;
-      // console.log(this.room)
-      //setting room model scale and location
     });
-
     this.roomChildren["rectLight"] = rectLight;
     this.actualRoom.add(rectLight);
     this.actualRoom.scale.set(0.75, 0.5625, 0.75);
     this.actualRoom.position.set(0, 0, 0);
-    console.log(this.room);
+    //setting room model scale and location
     this.scene.add(this.actualRoom);
   }
 
@@ -116,7 +108,7 @@ export default class Room extends EventEmitter {
     //arrow floating animation
   }
 
-  onMouseMove(e) {
+  onMouseMove() {
     window.addEventListener("mousemove", (e) => {
       this.rotation =
         ((e.clientX - window.innerWidth / 2) * 2) / window.innerWidth;
@@ -138,7 +130,6 @@ export default class Room extends EventEmitter {
     //ray from mouse location to ray Perspective custom camera
     const objects = this.toolbox.children;
     this.intersects = this.raycaster.intersectObjects(objects, true);
-    //"true" checks descendents of object group
 
     if (this.intersects.length > 0) {
       let i = 0;
@@ -157,11 +148,6 @@ export default class Room extends EventEmitter {
       this.open2.play();
       this.value = this.value === "close" ? "open" : "close";
       this.emit("open", this.value);
-
-      // console.log("clicked an object " + this.intersects[0].object.parent.name);
-      //the object3d group name should show "Toolbox"
-    } else {
-      console.log("no object here");
     }
   }
 
@@ -169,7 +155,6 @@ export default class Room extends EventEmitter {
     window.addEventListener("mousedown", (e) => {
       this.qRaycaster(e);
     });
-    // this.scene.add(new THREE.ArrowHelper(direction, pointA, 400, 0xff0000));
   }
   resize() {}
 

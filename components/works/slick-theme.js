@@ -1,8 +1,6 @@
-import { createTheme, Box } from "@mui/material";
-import { useState } from "react";
+import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@mui/system";
-import { PaletteMode } from "@mui/material";
-import { amber, blue, blueGrey, grey, indigo } from "@mui/material/colors";
+import { amber } from "@mui/material/colors";
 
 export const SlickDark = (mode) => ({
   palette: {
@@ -23,12 +21,11 @@ export const SlickDark = (mode) => ({
     },
     ...(mode === "dark" && {
       background: {
-        default: "#121212", // "#001224",
+        default: "#121212",
         paper: "#3798a6",
         contrast: "#41b7c8",
         transparent: "#0a192980",
         text: "#16385c",
-        //"#6280a5", // "#002447",
       },
       typography: {
         fontFamily: `Montserrat, sans-serif`,
@@ -65,11 +62,11 @@ export const SlickLight = (mode) => ({
     },
     ...(mode === "light" && {
       background: {
-        default: "#F5F5F5", //"#dafdff", //good"#c3e2e9", //"#ffeeff", //d0a2bd //"#e0f7fa", //"#ffccbc", //"#ff7961", //"#d1c4e9",
+        default: "#F5F5F5",
         paper: "#3798a6",
         contrast: "#41b7c8",
         transparent: "#c4e1ff80",
-        text: "#d6e8fa", //"#92b0b7", //good"#97cce9", //"#bbdefb", //"#efdcd5", // "#d1c4e9", //"#e3f2fd", // "#fff7ff",
+        text: "#d6e8fa",
       },
       typography: {
         fontFamily: `Montserrat, sans-serif`,

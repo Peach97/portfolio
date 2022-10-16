@@ -9,7 +9,6 @@ import Renderer from "./Renderer";
 import Preloader from "./Preloader";
 import World from "./World/World";
 import Controls from "./World/Controls";
-// import { EventEmitter } from "../about/events";
 
 export default class Experience {
   static instance;
@@ -42,10 +41,6 @@ export default class Experience {
     this.time.on("update", () => {
       this.update();
     });
-
-    // this.world.on("worldready", () => {
-    //   this.controls = new Controls();
-    // });
   }
 
   resize() {
