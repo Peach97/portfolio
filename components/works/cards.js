@@ -1,13 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Paper, Box, Typography, Divider } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
 import styles from "../../styles/Card.module.css";
-import { LogoButtonWhite, LogoButtonBlack } from "../Navbar/MenuButton";
 import WorksSummary from "./card-summary";
 
 const WorksCard = ({ toggle, path }) => {
-  const scrollRef = useRef(null);
-
   return (
     <>
       <Box className={styles.worksContainer}>

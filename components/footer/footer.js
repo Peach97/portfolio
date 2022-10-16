@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { LogoButtonBlack, LogoButtonWhite } from "../Navbar/MenuButton";
 import Grid from "@mui/material/Grid";
 import { LightButtonGroup, DarkButtonGroup } from "../Navbar/ButtonGroup";
@@ -39,10 +39,10 @@ const Footer = ({ toggle, page }) => {
         component="div"
         sx={{ display: "flex", height: "5rem", marginBottom: "2.5rem" }}
       >
-        {!toggle ? (
-          <LogoButtonBlack height={35} width={35} />
-        ) : (
+        {toggle ? (
           <LogoButtonWhite height={35} width={35} />
+        ) : (
+          <LogoButtonBlack height={35} width={35} />
         )}
       </Box>
       <Box
@@ -95,7 +95,7 @@ const Footer = ({ toggle, page }) => {
             sx={{ display: "flex" }}
           >
             <Typography fontSize="12px">
-              Copyright © 2022 Cameron Petrie All Rights Reserved.
+              Code & Modeling by Cameron Petrie 2022
             </Typography>
           </Grid>
           <Grid
@@ -115,7 +115,7 @@ const Footer = ({ toggle, page }) => {
             xs={12}
             sx={{ display: "flex" }}
           >
-            <Typography>Zina</Typography>
+            <Typography>All Rights Reserved</Typography>
           </Grid>
         </Grid>
       </div>

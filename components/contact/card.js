@@ -1,12 +1,9 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { Paper, Box, Typography, Divider } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
 import styles from "../../styles/Card.module.css";
-import { LogoButtonWhite, LogoButtonBlack } from "../Navbar/MenuButton";
-import Image from "next/image";
 import Form from "./form";
 
-const ContactCard = ({ toggle }) => {
+const ContactCard = () => {
   return (
     <>
       <Box
@@ -36,8 +33,6 @@ const ContactCard = ({ toggle }) => {
           <Form />
         </Paper>
       </Box>
-      {/* </motion.div>
-      </div> */}
     </>
   );
 };

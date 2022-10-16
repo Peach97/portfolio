@@ -1,43 +1,10 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { Paper, Box, Typography, Divider, useMediaQuery } from "@mui/material";
 import styles from "../../styles/Card.module.css";
-import { LogoButtonWhite, LogoButtonBlack } from "../Navbar/MenuButton";
-
 import { motion } from "framer-motion";
+import { skills, tools } from "./skills";
 
-// const style = {
-//   '@media (max-width: 968px)': {
-//     bgcolor: "background.transparent"
-//   },
-// };
-
-const skills = [
-  "React",
-  "JavaScript",
-  "CSS",
-  "HTML",
-  "MaterialUI",
-  "ExpressJS",
-  "MongoDB",
-  "NodeJS",
-  "Bootstrap",
-  "ThreeJS",
-  "JQuery",
-  "Debugging",
-  "Python",
-];
-
-const tools = [
-  "Github",
-  "Figma",
-  "Adobe Express",
-  "Adobe Photoshop",
-  "GIMP",
-  "Blender",
-  "APIs",
-];
-
-const AboutCard = ({ toggle }) => {
+const AboutCard = () => {
   const matches = useMediaQuery(`max-width: 968px`);
   return (
     <>
@@ -56,19 +23,7 @@ const AboutCard = ({ toggle }) => {
             applications. My passion for learning, coupled with numerous
             freelance projects, has given me practical experience with many
             powerful web tools.
-            <br />
-            <br />
-            {/* I believe that with the right vision and resources, the creation
-            possibilities on the web are endless. Engaging user interfaces,
-            powerful digital experiences, and overall scalable products are what
-            I strive to provide.
-            <br />
-            <br />
-            That being said I also believe in letting my work speak for itself -
-            check out my recent projects below. */}
           </Typography>
-          <br />
-          <br />
           <Box className={styles.skillsBox}>
             <Divider sx={{ width: "100%", marginTop: "2.5rem" }} />
             <Typography
@@ -76,7 +31,7 @@ const AboutCard = ({ toggle }) => {
               variant="h4"
               className={styles.skillsHeading}
             >
-              Skills Include:
+              Skills:
             </Typography>
             <Divider sx={{ width: "100%", marginBottom: "2.5rem" }} />
             {skills.map((skill, index) => (
@@ -125,23 +80,6 @@ const AboutCard = ({ toggle }) => {
               </motion.div>
             ))}
           </Box>
-          {matches ? (
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                width: "100%",
-                height: "25rem",
-                justifyContent: "center",
-              }}
-            >
-              {!toggle ? (
-                <LogoButtonBlack height={75} width={75} />
-              ) : (
-                <LogoButtonWhite height={75} width={75} />
-              )}
-            </div>
-          ) : null}
         </Paper>
       </Box>
     </>

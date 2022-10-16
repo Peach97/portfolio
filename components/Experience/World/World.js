@@ -25,34 +25,20 @@ export default class World extends EventEmitter {
       this.floor = new Floor();
       this.room = new Room();
       this.actualRoom = this.room.scene;
-
-      console.log("ready");
-      // this.controls = new Controls();
       this.emit("worldready");
-      // this.onMouseMove();
     });
-    // if (this.room) {
-    //   this.room.on("open", (value) => {
-    //     this.setSkills(value);
-    //   });
-    // }
 
     this.theme.on("switch", (theme) => {
       this.switchTheme(theme);
     });
   }
 
-  // setSkills(value) {
-  //   if (this.controls) {
-  //     this.controls.setSkills(value);
-  //   }
-  // }
-
   switchTheme(theme) {
     if (this.environment) {
       this.environment.switchTheme(theme);
     }
   }
+
   resize() {}
 
   update() {

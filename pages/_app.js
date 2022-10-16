@@ -25,7 +25,6 @@ function MyApp({
   //Works page toggler
   const [toggle, setToggle] = useState(true);
   //Theme toggler
-  const [showPage, setShowPage] = useState(false);
   const [loading, setLoading] = useState(true);
   //loading handler
   const [page, setPage] = useState(false);

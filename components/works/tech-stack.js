@@ -1,4 +1,4 @@
-import { Card, Box, Typography, Divider, Grid } from "@mui/material";
+import { Card, Box, Typography, Grid } from "@mui/material";
 import Image from "next/image";
 import styles from "../../styles/Works.module.css";
 import WorkContext from "../../components/context";

@@ -10,7 +10,6 @@ import WorkContext from "../../components/context";
 
 function Works({ toggle, setPage }) {
   const context = useContext(WorkContext);
-  //works theme toggler React Component
   useEffect(() => {
     setPage(true);
     context.setValue("slick");
@@ -23,7 +22,6 @@ function Works({ toggle, setPage }) {
           className={styles.container}
           sx={{
             bgcolor: "background.default",
-            // bgcolor: toggle ? "#000000" : "#ffffff",
           }}
         >
           <Box color="text.primary" className={styles.imageContainer}>

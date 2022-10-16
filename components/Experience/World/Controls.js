@@ -1,9 +1,6 @@
 import * as THREE from "three";
 import Experience from "../Experience";
 import gsap from "gsap";
-import dynamic from "next/dynamic";
-import { EventEmitter } from "events";
-import { duration } from "@mui/material";
 
 export default class Controls {
   constructor() {
@@ -49,7 +46,6 @@ export default class Controls {
 
   setSkills() {
     this.page = document.querySelector(".skills-container");
-    console.log(this.page);
     this.world.on("open", () => {
       gsap.fromTo(
         this.page,
@@ -91,10 +87,7 @@ export default class Controls {
       this.rectLight.height = 25;
       this.room.position.set(0, 0, 0);
       this.orthographicCamera.position.copy(initialCameraPosition);
-      // this.floor.position.y = -100;
-      // this.floor.rotation.x = -Math.PI / 2;
 
-      // console.log("fired desktop");
       //First move section
       this.firstMoveTimeline = new gsap.timeline({
         scrollTrigger: {
@@ -113,8 +106,6 @@ export default class Controls {
         },
         "same"
       );
-      //        .to(this.floor.position, { y: -50 }, "same");
-      // .to(this.orthographicCamera.position, { y: -0.25 }, "same");
 
       // Second Move
       this.secondMoveTimeline = new gsap.timeline({
@@ -243,7 +234,6 @@ export default class Controls {
         10,
         22 * Math.cos(0.2 * Math.PI)
       );
-      // console.log("fired mobile");
       //First move (mobile)
       this.sixthMoveTimeline = new gsap.timeline({
         scrollTrigger: {
@@ -254,7 +244,6 @@ export default class Controls {
           invalidateOnRefresh: true,
         },
       })
-        // .to(this.loader, { opacity: 0, duration: 4 })
         .to(
           this.room.scale,
           {

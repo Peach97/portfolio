@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/Navbar.module.css";
 import { AppBar, Toolbar, Box } from "@mui/material";
 import { BackButton } from "./MenuButton";
 import ToggleButton from "./theme-toggler";
@@ -8,7 +7,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Navbar = (props) => {
-  const { page } = props;
+  const { page, toggle, setToggle } = props;
   const [color, setColor] = useState(false);
   const changeColor = () => {
     if (window.scrollY >= 200) {
@@ -20,21 +19,8 @@ const Navbar = (props) => {
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
   });
-  // const theme = useTheme();
-  const [openNav, setOpenNav] = useState(false);
-  //side nav drawer open
-  const [open, setOpen] = useState(false);
-  //hamburger menu animation
-  const { path, toggle, setToggle } = props;
   return (
     <Box sx={{ flexGrow: 1, bgcolor: `background.transparent` }}>
-      {/* <DrawerComp
-        toggle={toggle}
-        path={path}
-        openNav={openNav}
-        setOpenNav={setOpenNav}
-        setOpen={setOpen}
-      /> */}
       <AppBar
         sx={{
           padding: "0.25rem 0 0.25rem 0",
@@ -42,10 +28,8 @@ const Navbar = (props) => {
         }}
         color="transparent"
         elevation={color ? 4 : 0}
-        // position={page ? "relative" : "fixed"}
       >
         <Toolbar>
-          {/* <MenuButton setOpenNav={setOpenNav} open={open} setOpen={setOpen} /> */}
           <IconButton
             href="https://github.com/Peach97"
             target="_blank"

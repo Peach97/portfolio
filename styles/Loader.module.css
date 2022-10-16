@@ -1,6 +1,6 @@
 .container {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     display: flex;
     place-content: center;
     overflow: hidden;
@@ -8,7 +8,7 @@
 }
 
 .item {
-    width: 56%;
+    width: 50%;
     overflow: visible;
     stroke: #fff;
     stroke-width: 2;
