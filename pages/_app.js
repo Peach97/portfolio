@@ -42,6 +42,11 @@ function MyApp({
           document.querySelector(".preloader").classList.add("hidden");
         }, 5000);
       }
+      if (window.location.href.indexOf("podcast") > -1) {
+        setTimeout(() => {
+          document.querySelector(".preloader").classList.add("hidden");
+        }, 5000);
+      }
     };
     router.events.on("routeChangeComplete", handleComplete());
     router.events.on("routeChangeError", handleComplete());

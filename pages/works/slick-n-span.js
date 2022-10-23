@@ -9,6 +9,16 @@ import SlickToggler from "../../components/works/slick-theme";
 import WorkContext from "../../components/context";
 
 function Works({ toggle, setPage }) {
+  const slickStack = [
+    { pic: "html", title: "HTML" },
+    { pic: "css-3", title: "CSS" },
+    { pic: "js", title: "JavaScript" },
+    { pic: "atom", title: "React" },
+    { pic: "nodejs", title: "NodeJS" },
+    { pic: "photoshop", title: "Photoshop" },
+    { pic: "bootstrap", title: "Bootstrap" },
+    { pic: "adobe", title: "Adobe Cloud" },
+  ];
   const context = useContext(WorkContext);
   useEffect(() => {
     setPage(true);
@@ -36,6 +46,7 @@ function Works({ toggle, setPage }) {
           </Box>
           <Divider sx={{ margin: "2.5rem" }} />
           <TechStack
+            skills={slickStack}
             description="The SlickN'Span official website was created with one though in mind: convenience. The goal was to give potential clients a clean and accessible interface that would allow for a quick and easy service selection and scheduling process. This project relied on intensive use of Bootstrap and React functional components, as well as a happy helping of Photoshop. As SlickN'Span Detailing provides a mobile service, I placed particular emphasis on the design of the mobile interface. I decided to utilize EmailJS for form submission as it allowed for the detailing crew to receive detailed inquiries while on the go."
             toggle={toggle}
           />

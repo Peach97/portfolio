@@ -44,7 +44,7 @@ const WorksCard = ({ toggle, path }) => {
           <WorksSummary
             path={path}
             work="Podcasting"
-            to="takeover-pods"
+            to="podcast"
             app="Takeover Podcasting"
             subtitle="Listen to Episodes using Spotify API"
             toggle={toggle}

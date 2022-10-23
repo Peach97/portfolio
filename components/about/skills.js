@@ -57,6 +57,7 @@ function Skills() {
                 }}
                 gutterBottom
                 variant="h5"
+                fontWeight={800}
                 color="text.primary"
               >
                 {skill}
@@ -76,6 +77,7 @@ function Skills() {
                 padding: "0.25rem 1rem 0.25rem 1rem",
                 borderRadius: "32px",
               }}
+              fontWeight={800}
               gutterBottom
               color="text.primary"
               variant="h5"

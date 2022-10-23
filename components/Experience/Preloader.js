@@ -340,8 +340,9 @@ export default class Preloader extends EventEmitter {
             x: 1,
             y: 1,
             z: 1,
+            duration: 1.25,
           },
-          "chair"
+          ">-0.5"
         )
         .fromTo(
           this.roomChildren.chair_back.position,
@@ -349,7 +350,7 @@ export default class Preloader extends EventEmitter {
             y: 400,
           },
           { y: 0 },
-          "chair"
+          "<"
         )
         .to(
           this.roomChildren.chair_back.scale,
@@ -358,16 +359,16 @@ export default class Preloader extends EventEmitter {
             y: 1,
             z: 1,
           },
-          "chair"
+          "<"
         )
         .to(
           this.roomChildren.chair_back.rotation,
           {
             y: 4 * Math.PI,
             ease: "power2.out",
-            duration: 1,
+            duration: 1.25,
           },
-          "chair"
+          "<"
         )
         .to(
           this.roomChildren.peach.scale,
@@ -378,15 +379,15 @@ export default class Preloader extends EventEmitter {
             ease: "back.out(1)",
             duration: 1,
           },
-          "peach"
+          ">-0.5"
         )
         .fromTo(
           this.roomChildren.peach.position,
           {
             y: 500,
           },
-          { y: 0, duration: 1 },
-          "peach"
+          { y: 0, duration: 0.75 },
+          ">-1"
         )
         .to(this.description, {
           scale: 1,

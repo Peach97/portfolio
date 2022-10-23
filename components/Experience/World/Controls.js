@@ -58,6 +58,7 @@ export default class Controls {
         },
         {
           opacity: 1,
+          position: "relative",
           display: "flex",
           x: 0,
           height: "fit-content",

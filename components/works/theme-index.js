@@ -18,7 +18,7 @@ export default function Toggler({ children, toggle }) {
 
   return (
     <ThemeProvider
-      theme={context.session === "takeover-pods" ? takeoverTheme : slickTheme}
+      theme={context.session === "slick" ? slickTheme : takeoverTheme}
     >
       {children}
     </ThemeProvider>
