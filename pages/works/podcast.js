@@ -4,18 +4,17 @@ import { Box } from "@mui/system";
 import { Divider, Typography } from "@mui/material";
 import TechStack from "../../components/works/tech-stack";
 import LiveLink from "../../components/works/live-link";
-import { TakeoverModel } from "../../components/Three/Scene";
+import { PodcastModel } from "../../components/Three/Scene";
 import TakeoverToggler from "../../components/works/takeover-theme";
 import WorkContext from "../../components/context";
 
 function Works({ toggle, setPage }) {
-  const takeoverStack = [
+  const podStack = [
     { pic: "html", title: "HTML" },
     { pic: "css-3", title: "CSS" },
     { pic: "js", title: "JavaScript" },
     { pic: "atom", title: "React" },
-    { pic: "express", title: "ExpressJS" },
-    { pic: "mongodb", title: "MongoDB" },
+    { pic: "firebase", title: "Firebase" },
     { pic: "mui", title: "MaterialUI" },
     { pic: "nodejs", title: "NodeJS" },
     { pic: "spotify (2)", title: "Spotify API" },
@@ -36,7 +35,7 @@ function Works({ toggle, setPage }) {
           }}
         >
           <Box color="text.primary" className={styles.imageContainer}>
-            <TakeoverModel />
+            <PodcastModel />
             <div className={styles.textBox}>
               <Typography className={styles.text}>TakeoverPods</Typography>
             </div>
@@ -47,7 +46,7 @@ function Works({ toggle, setPage }) {
           </Box>
           <Divider sx={{ margin: "2.5rem" }} />
           <TechStack
-            skills={takeoverStack}
+            skills={podStack}
             description="Takeover Pods provides listeners of the Takeover Podcast Network
               an intuitive interface for finding and experiencing content. This
               was a unique challenge as not only does the network provide
@@ -68,7 +67,7 @@ function Works({ toggle, setPage }) {
           />
           <LiveLink
             github="https://github.com/Peach97/TakeoverPods"
-            link="https://takeoverpods.netlify.app/trending"
+            link="https://takeoverpods.netlify.app/"
           />
         </Box>
       </TakeoverToggler>

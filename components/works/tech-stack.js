@@ -1,36 +1,21 @@
-import { Card, Box, Typography, Grid } from "@mui/material";
+import {
+  Card,
+  Box,
+  Typography,
+  Grid,
+  getSkeletonUtilityClass,
+} from "@mui/material";
 import Image from "next/image";
 import styles from "../../styles/Works.module.css";
 import WorkContext from "../../components/context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const TechStack = (props) => {
-  const { description } = props;
   const context = useContext(WorkContext);
-  const takeoverStack = [
-    { pic: "html", title: "HTML" },
-    { pic: "css-3", title: "CSS" },
-    { pic: "js", title: "JavaScript" },
-    { pic: "atom", title: "React" },
-    { pic: "express", title: "ExpressJS" },
-    { pic: "mongodb", title: "MongoDB" },
-    { pic: "mui", title: "MaterialUI" },
-    { pic: "nodejs", title: "NodeJS" },
-    { pic: "spotify (2)", title: "Spotify API" },
-  ];
-  const slickStack = [
-    { pic: "html", title: "HTML" },
-    { pic: "css-3", title: "CSS" },
-    { pic: "js", title: "JavaScript" },
-    { pic: "atom", title: "React" },
-    { pic: "nodejs", title: "NodeJS" },
-    { pic: "photoshop", title: "Photoshop" },
-    { pic: "bootstrap", title: "Bootstrap" },
-    { pic: "adobe", title: "Adobe Cloud" },
-  ];
+  const { description, skills } = props;
 
   const Stack = (props) => {
-    const skills = props.skills;
+    const { skills } = props;
     return (
       <>
         {skills.map((item, index) => (
@@ -64,7 +49,6 @@ const TechStack = (props) => {
     );
   };
   //dynamic tech stack React Component
-
   return (
     <>
       <Box
@@ -82,9 +66,7 @@ const TechStack = (props) => {
           <Grid item md={10} sm={12} xs={12}>
             <Typography className={styles.section}>Tools Used</Typography>
           </Grid>
-          <Stack
-            skills={context.value === "slick" ? slickStack : takeoverStack}
-          />
+          <Stack skills={skills} />
         </Grid>
       </Box>
     </>

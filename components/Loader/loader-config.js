@@ -28,6 +28,8 @@ export default function LoaderConfig() {
             <div></div>
             <div></div>
             <div></div>
+            <div></div>
+            <div></div>
           </div>
         </Box>
       </div>
