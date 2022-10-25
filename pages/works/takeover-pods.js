@@ -63,7 +63,7 @@ function Works({ toggle, setPage }) {
               Inspiration for this application came from some of my favorite
               podcasts’ web applications including: Radiolab, Last Podcast on
               the Left, and the Andrew Huberman Lab. Future improvements include comment sections and more in depth search 
-              and sorting capabilities. Be sure to check the <a href="https://github.com/Peach97/TakeoverPods/blob/main/README.md" target="_blank">ReadMe</a> on Github for more details on the
+              and sorting capabilities. Be sure to check the ReadMe on Github for more details on the
               technical implementation. Experience Takeover Blogs for yourself by visiting the Live Link."
             toggle={toggle}
           />
