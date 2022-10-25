@@ -57,7 +57,7 @@ function Works({ toggle, setPage }) {
               In order to display the podcast content, two different credential flows were implemented. The first is client credential flow
               which allows the application access to public playlists from Spotify (allows for recent episodes to appear on landing page).
               The second is the user authentication flow which gives further functionality, including: the in app media player, queuing episodes, adding 
-              Takeover content to a user\'s personal playlist, and accessing a user\'s current playback state.
+              Takeover content to a user's personal playlist, and accessing a user's current playback state.
 
               Inspiration for this application came from some of my favorite
               podcasts’ web applications including: Radiolab, Last Podcast on
