@@ -304,6 +304,11 @@ a {
 
 @media (max-width: 968px) {
 
+  .model-canvas {
+    height: 75%;
+    width: 50%;
+  }
+
   .bouncer {
     width: 33.333333333333vw
   }
@@ -334,10 +339,6 @@ a {
     left: 2.5rem;
     bottom: 5rem;
   }
-
-  /* .hero-wrapper {
-    width: calc(100% - 60px);
-  } */
 
   .hero-main-title {
     font-size: 20px;
