@@ -62,7 +62,7 @@ export const TakeoverLight = (mode) => ({
     },
     ...(mode === "light" && {
       background: {
-        default: "#ffffff",
+        default: "#FEF7E7",
         paper: "#e6dfe0",
         contrast: "#e52f44",
         transparent: "#c4e1ff80",

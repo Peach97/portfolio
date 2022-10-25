@@ -69,6 +69,7 @@ const WorksSummary = (props) => {
               <Button
                 component="a"
                 LinkComponent={Link}
+                target="_blank"
                 href={`/works/${props.to}`}
                 sx={{ borderRadius: "8px" }}
                 className={styles.btn}
