@@ -53,7 +53,7 @@ function Works({ toggle, setPage }) {
               podcast episodes weekly from a variety of content providers, but
               also features a comprehensive blog related to the same topics. Integration with 
               Spotify allows users to listen directly on the site after completing a user credential flow. Be sure
-              to check the <a href="https://github.com/Peach97/TakeoverPods/blob/main/README.md" target="_blank">ReadMe</a> on Github for implementation details.
+              to check the ReadMe on Github for implementation details.
               In order to display the podcast content, two different credential flows were implemented. The first is client credential flow
               which allows the application access to public playlists from Spotify (allows for recent episodes to appear on landing page).
               The second is the user authentication flow which gives further functionality, including: the in app media player, queuing episodes, adding 
