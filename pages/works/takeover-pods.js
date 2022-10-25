@@ -58,13 +58,12 @@ function Works({ toggle, setPage }) {
               including: Facebook, Youtube, Twitter, Instagram, Spotify, and an
               entire list of streaming providers. Now, upon completion of a
               quick and painless authentication process, creators can post and
-              update their content all in one place. 
+              update their content all in one place. Blog posts are filtered for the user by their upload date and channel.
 
               Inspiration for this application came from some of my favorite
               podcasts’ web applications including: Radiolab, Last Podcast on
-              the Left, and the Andrew Huberman Lab. Future improvements include comment sections and search 
-              and sorting capabilities. Experience Takeover Blogs
-              for yourself by visiting the Live Link."
+              the Left, and the Andrew Huberman Lab. Future improvements include comment sections and more in depth search 
+              and sorting capabilities. Experience Takeover Blogs for yourself by visiting the Live Link."
             toggle={toggle}
           />
           <LiveLink
