@@ -48,21 +48,22 @@ function Works({ toggle, setPage }) {
           <Divider sx={{ margin: "2.5rem" }} />
           <TechStack
             skills={takeoverStack}
-            description="Takeover Pods provides listeners of the Takeover Podcast Network
-              an intuitive interface for finding and experiencing content. This
-              was a unique challenge as not only does the network provide
-              podcast episodes weekly from a variety of content providers, but
-              also features a comprehensive blog related to the same topics.
+            description="Takeover Blogs provides listeners of the Takeover Podcast Network
+              an intuitive interface for finding and editing bogging content. Bloggers will be given
+              their own unique identification and password that allows them to authenticate. 
+              After authentication, bloggers can add, edit, or delete posts
+              or their attributes including title, photos, descriptions, and assignment to their specific channel. 
               
               Previously, content providers from TPN posted on various platforms
               including: Facebook, Youtube, Twitter, Instagram, Spotify, and an
               entire list of streaming providers. Now, upon completion of a
               quick and painless authentication process, creators can post and
-              update their content all in one place.
+              update their content all in one place. 
 
               Inspiration for this application came from some of my favorite
               podcasts’ web applications including: Radiolab, Last Podcast on
-              the Left, and the Andrew Huberman Lab. Experience Takeover Pods
+              the Left, and the Andrew Huberman Lab. Future improvements include comment sections and search 
+              and sorting capabilities. Experience Takeover Blogs
               for yourself by visiting the Live Link."
             toggle={toggle}
           />
