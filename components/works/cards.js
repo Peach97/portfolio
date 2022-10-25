@@ -33,8 +33,8 @@ const WorksCard = ({ toggle, path }) => {
             app="Takeover Blog"
             subtitle="CRUD Application"
             toggle={toggle}
-            description="Sports podcasting/blogging application with full MERN stack capabilities. Offers authentication using Firebase as well as auto-updating content from Spotify API with client credentials flow authentication."
-            description2="Clean interface allowing users to quickly find podcast episodes and find any corresponding blog articles. The ultimate sports information experience all in one place."
+            description="Sports blogging application with full MERN stack capabilities. Offers authentication using Firebase as well as auto-updating content from Spotify API with client credentials flow authentication."
+            description2="Clean interface allowing users to quickly find any corresponding blog articles with date and channel filters. The ultimate sports information experience all in one place."
             first="MongoDB"
             second="ExpressJS"
             third="Firebase Auth"
@@ -48,8 +48,8 @@ const WorksCard = ({ toggle, path }) => {
             app="Takeover Podcasting"
             subtitle="Listen to Episodes using Spotify API"
             toggle={toggle}
-            description="Sports podcasting/blogging application with full MERN stack capabilities. Offers authentication using Firebase as well as auto-updating content from Spotify API with client credentials flow authentication."
-            description2="Clean interface allowing users to quickly find podcast episodes and find any corresponding blog articles. The ultimate sports information experience all in one place."
+            description="Sports podcasting application with full MERN stack capabilities. Offers authentication using Spotify as well as auto-updating content from Spotify API with client credentials flow authentication."
+            description2="Clean interface allowing users to quickly find podcast episodes. The ultimate sports information experience all in one place."
             first="SpotifyAPI"
             second="MaterialUI"
             third="React"
