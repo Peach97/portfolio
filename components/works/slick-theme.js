@@ -21,7 +21,7 @@ export const SlickDark = (mode) => ({
     },
     ...(mode === "dark" && {
       background: {
-        default: "#121212",
+        default: "#040404",
         paper: "#3798a6",
         contrast: "#41b7c8",
         transparent: "#0a192980",
@@ -62,7 +62,7 @@ export const SlickLight = (mode) => ({
     },
     ...(mode === "light" && {
       background: {
-        default: "#F5F5F5",
+        default: "#E0ECF8",
         paper: "#3798a6",
         contrast: "#41b7c8",
         transparent: "#c4e1ff80",

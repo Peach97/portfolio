@@ -9,6 +9,7 @@ import Podcast from "./TakeoverPods/Podcast";
 export const TakeoverModel = () => {
   return (
     <Canvas
+      className="model-canvas"
       style={{
         position: "relative",
         top: 0,
@@ -19,8 +20,7 @@ export const TakeoverModel = () => {
       }}
     >
       <ambientLight intensity={1} />
-
-      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
+      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={75} />
       <OrbitController />
       <Preview />
     </Canvas>
@@ -29,6 +29,7 @@ export const TakeoverModel = () => {
 export const SlickModel = () => {
   return (
     <Canvas
+      className="model-canvas"
       style={{
         position: "relative",
         top: 0,
@@ -39,8 +40,7 @@ export const SlickModel = () => {
       }}
     >
       <ambientLight intensity={1} />
-
-      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
+      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={75} />
       <OrbitController />
       <Preview2 />
     </Canvas>
@@ -49,6 +49,7 @@ export const SlickModel = () => {
 export const PodcastModel = () => {
   return (
     <Canvas
+      className="model-canvas"
       style={{
         position: "relative",
         top: 0,
@@ -59,8 +60,7 @@ export const PodcastModel = () => {
       }}
     >
       <ambientLight intensity={1} />
-
-      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={100} />
+      <OrthographicCamera makeDefault position={[4, 4, -2]} zoom={75} />
       <OrbitController />
       <Podcast />
     </Canvas>

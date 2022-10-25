@@ -35,7 +35,7 @@ const LiveLink = (props) => {
       >
         <GitHubIcon fontSize="medium" sx={{ marginRight: "0.5rem" }} />
 
-        <Typography>Source Code</Typography>
+        <Typography fontWeight={800}>Source Code</Typography>
       </Box>
       <Box
         component={Button}
