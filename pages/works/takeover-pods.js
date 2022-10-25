@@ -59,8 +59,10 @@ function Works({ toggle, setPage }) {
               entire list of streaming providers. Now, upon completion of a
               quick and painless authentication process, creators can post and
               update their content all in one place. Blog posts are filtered for the user by their upload date and channel.
-
-              <br /><br />Inspiration for this application came from some of my favorite
+           
+              <br />
+              <br />
+              Inspiration for this application came from some of my favorite
               podcasts’ web applications including: Radiolab, Last Podcast on
               the Left, and the Andrew Huberman Lab. Future improvements include comment sections and more in depth search 
               and sorting capabilities. Be sure to check the <a href="https://github.com/Peach97/TakeoverPods/blob/main/README.md" target="_blank">ReadMe</a> on Github for more details on the
