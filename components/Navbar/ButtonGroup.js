@@ -13,10 +13,20 @@ import styles from "../../styles/Navbar.module.css";
 export const LightButtonGroup = () => {
   return (
     <Box>
-      <IconButton className={styles.iconBtn}>
+      <IconButton
+        className={styles.iconBtn}
+        href="https://github.com/Peach97"
+        target="_blank"
+        disableRipple
+      >
         <Image src={githubW} alt="/" />
       </IconButton>
-      <IconButton className={styles.iconBtn}>
+      <IconButton
+        className={styles.iconBtn}
+        href="https://www.linkedin.com/in/cameron-petrie-4b00aa148"
+        target="_blank"
+        disableRipple
+      >
         <Image src={linkedinW} alt="/" />
       </IconButton>
       <IconButton className={styles.iconBtn}>
@@ -29,10 +39,18 @@ export const LightButtonGroup = () => {
 export const DarkButtonGroup = () => {
   return (
     <Box>
-      <IconButton className={styles.iconBtn}>
+      <IconButton
+        className={styles.iconBtn}
+        href="https://github.com/Peach97"
+        target="_blank"
+      >
         <Image src={githubB} alt="/" />
       </IconButton>
-      <IconButton className={styles.iconBtn}>
+      <IconButton
+        className={styles.iconBtn}
+        href="https://www.linkedin.com/in/cameron-petrie-4b00aa148"
+        target="_blank"
+      >
         <Image src={linkedinB} alt="/" />
       </IconButton>
       <IconButton className={styles.iconBtn}>

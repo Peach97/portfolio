@@ -90,6 +90,10 @@ export default function HeroSection({ toggle, path }) {
         id="second-move"
         className="second-move section-margin"
       >
+        <div
+          style={{ height: "fit-content", width: "fit-content" }}
+          className="about-location"
+        ></div>
         <AboutCard toggle={toggle} />
         <Skills toggle={toggle} />
       </Box>
@@ -105,6 +109,7 @@ export default function HeroSection({ toggle, path }) {
           alignItems: "end",
         }}
       >
+        <div style={{ height: "fit-content" }} className="works-location"></div>
         <WorksCard path={path} toggle={toggle} />
       </Box>
       <Box
@@ -117,6 +122,10 @@ export default function HeroSection({ toggle, path }) {
           justifyContent: "flex-end",
         }}
       >
+        <div
+          style={{ height: "fit-content" }}
+          className="contact-location"
+        ></div>
         <ContactCard />
       </Box>
       <Box
