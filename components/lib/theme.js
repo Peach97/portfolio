@@ -79,7 +79,9 @@ const customLight = (mode) => ({
 });
 
 export default function Toggler({ children, toggle }) {
-  const theme = createTheme(toggle ? customDark("dark") : customLight("light"));
+  const theme = createTheme(
+    !toggle ? customDark("dark") : customLight("light")
+  );
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }

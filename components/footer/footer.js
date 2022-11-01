@@ -9,15 +9,14 @@ import { Link } from "@mui/material";
 function scrollTo(route) {
   document.querySelector(`${route}`).scrollIntoView({
     behavior: "smooth",
-    offsetTop: "90%",
   });
 }
 
 const links = [
   { title: "Home", route: ".hero-main" },
-  { title: "Work", route: ".third-move" },
-  { title: "About", route: ".second-move" },
-  { title: "Contact", route: ".fourth-move" },
+  { title: "Work", route: ".works-location" },
+  { title: "About", route: ".about-location" },
+  { title: "Contact", route: ".contact-location" },
 ];
 
 const Footer = ({ toggle, page }) => {
@@ -39,7 +38,7 @@ const Footer = ({ toggle, page }) => {
         component="div"
         sx={{ display: "flex", height: "5rem", marginBottom: "2.5rem" }}
       >
-        {toggle ? (
+        {!toggle ? (
           <LogoButtonWhite height={35} width={35} />
         ) : (
           <LogoButtonBlack height={35} width={35} />
@@ -105,7 +104,7 @@ const Footer = ({ toggle, page }) => {
             sm={12}
             sx={{ justifyContent: "center", display: "flex" }}
           >
-            {toggle ? <LightButtonGroup /> : <DarkButtonGroup />}
+            {!toggle ? <LightButtonGroup /> : <DarkButtonGroup />}
           </Grid>
           <Grid
             className={styles.endFooter}

@@ -11,9 +11,10 @@ export default class Environment {
   }
 
   setSunlight() {
-    const color = new THREE.Color("rgb(44, 59, 175)");
+    // const color = new THREE.Color("rgb(44, 59, 175)");
+    const color = new THREE.Color("rgb(255, 255, 255)");
 
-    const intensity = 0.75;
+    const intensity = 3.5;
     this.sunLight = new THREE.DirectionalLight(color, intensity);
     this.sunLight.position.set(20, 500, 0);
     this.sunLight.castShadow = true;
@@ -41,37 +42,11 @@ export default class Environment {
     //back facing sunlight
     this.scene.add(this.sunLight2.target);
     this.scene.add(this.sunLight, this.sunLight2);
-    this.ambientLight = new THREE.AmbientLight(color, 0.85);
+    this.ambientLight = new THREE.AmbientLight(color, 1.5);
     this.scene.add(this.ambientLight);
   }
   switchTheme(theme) {
     if (theme === "light") {
-      GSAP.to(this.sunLight.color, {
-        r: 0.17254901960784313,
-        g: 0.23137254901960785,
-        b: 0.6862745098039216,
-      });
-      GSAP.to(this.sunLight2.color, {
-        r: 0.17254901960784313,
-        g: 0.23137254901960785,
-        b: 0.6862745098039216,
-      });
-      GSAP.to(this.ambientLight.color, {
-        r: 0.17254901960784313,
-        g: 0.23137254901960785,
-        b: 0.6862745098039216,
-      });
-      GSAP.to(this.sunLight, {
-        intensity: 0.75,
-      });
-      GSAP.to(this.sunLight2, {
-        intensity: 0.75,
-      });
-      GSAP.to(this.ambientLight, {
-        intensity: 0.85,
-      });
-    } else {
-      //dark mode values for sunlight -->
       GSAP.to(this.sunLight.color, {
         r: 1,
         g: 1,
@@ -95,6 +70,32 @@ export default class Environment {
       });
       GSAP.to(this.ambientLight, {
         intensity: 1.5,
+      });
+    } else {
+      //dark mode values for sunlight -->
+      GSAP.to(this.sunLight.color, {
+        r: 0.17254901960784313,
+        g: 0.23137254901960785,
+        b: 0.6862745098039216,
+      });
+      GSAP.to(this.sunLight2.color, {
+        r: 0.17254901960784313,
+        g: 0.23137254901960785,
+        b: 0.6862745098039216,
+      });
+      GSAP.to(this.ambientLight.color, {
+        r: 0.17254901960784313,
+        g: 0.23137254901960785,
+        b: 0.6862745098039216,
+      });
+      GSAP.to(this.sunLight, {
+        intensity: 1,
+      });
+      GSAP.to(this.sunLight2, {
+        intensity: 1,
+      });
+      GSAP.to(this.ambientLight, {
+        intensity: 0.85,
       });
     }
   }

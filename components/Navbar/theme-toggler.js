@@ -31,7 +31,7 @@ export default function ToggleButton({ toggle, setToggle }) {
               setToggle(!toggle);
             }}
           >
-            {!toggle ? (
+            {toggle ? (
               <Image
                 layout="intrinsic"
                 src={night}

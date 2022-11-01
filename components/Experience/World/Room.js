@@ -82,6 +82,7 @@ export default class Room extends EventEmitter {
         this.toolbox = child;
       }
       if (child.name === "Preloader") {
+        child.children[3].material.emissiveIntensity = 0.25;
         child.position.set(0, -100, 0);
       }
       if (child.name === "Preloader_Bubble") {
