@@ -40,9 +40,25 @@ function Skills() {
         <Typography
           variant="h5"
           component="div"
-          sx={{ margin: "0 0 1rem 0" }}
+          sx={{
+            margin: "0 0 1rem 0",
+            justifyContent: "center",
+          }}
           fontWeight={800}
         >
+          <Typography
+            fontWeight={800}
+            variant="h3"
+            gutterBottom
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              textAlign: "center",
+            }}
+          >
+            Technologies & Frameworks
+          </Typography>
+
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -64,6 +80,14 @@ function Skills() {
               </Typography>
             </motion.div>
           ))}
+        </Typography>
+        <Typography
+          fontWeight={800}
+          variant="h3"
+          gutterBottom
+          sx={{ textAlign: "center" }}
+        >
+          Database & Analytics
         </Typography>
         {tools.map((tool, index) => (
           <motion.div
