@@ -5,7 +5,7 @@ import ToggleButton from "./theme-toggler";
 import { IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
+import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
 import FileSaver from "file-saver";
 import { Tooltip } from "@mui/material";
 
@@ -20,8 +20,11 @@ const Navbar = (props) => {
     }
   };
   const saveFile = () => {
-    FileSaver.saveAs("/resources/Cameron Petrie Resume.png", "Cameron Petrie Resume.png");
-  }
+    FileSaver.saveAs(
+      "/resources/Cameron Petrie Resume.png",
+      "Cameron Petrie Resume.png"
+    );
+  };
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
   });
@@ -57,7 +60,7 @@ const Navbar = (props) => {
               <SimCardDownloadIcon disableRipple />
             </IconButton>
           </Tooltip>
-          {page ? <BackButton /> : null}
+
           <ToggleButton toggle={toggle} setToggle={setToggle} />
         </Toolbar>
       </AppBar>

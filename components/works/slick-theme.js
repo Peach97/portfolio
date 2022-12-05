@@ -77,7 +77,7 @@ export const SlickLight = (mode) => ({
 
 export default function SlickToggler({ children, toggle }) {
   const slickTheme = createTheme(
-    toggle ? SlickDark("dark") : SlickLight("light")
+    !toggle ? SlickDark("dark") : SlickLight("light")
   );
 
   return <ThemeProvider theme={slickTheme}>{children}</ThemeProvider>;

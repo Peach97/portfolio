@@ -77,7 +77,7 @@ export const TakeoverLight = (mode) => ({
 
 export default function TakeoverToggler({ children, toggle }) {
   const takeoverTheme = createTheme(
-    toggle ? TakeoverDark("dark") : TakeoverLight("light")
+    !toggle ? TakeoverDark("dark") : TakeoverLight("light")
   );
 
   return <ThemeProvider theme={takeoverTheme}>{children}</ThemeProvider>;
