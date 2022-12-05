@@ -11,11 +11,11 @@ const WorksCard = ({ toggle, path }) => {
           className={styles.worksPaper}
           sx={{
             color: "text.primary",
-            bgcolor: "background.transparent",
+            bgcolor: "background.default",
             padding: "1rem 1rem 20rem 1rem",
             marginBottom: "5rem",
           }}
-          elevation={4}
+          
         >
           <Typography
             className={styles.aboutHeading}

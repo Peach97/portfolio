@@ -43,7 +43,7 @@ const WorksSummary = (props) => {
     <>
       <Grid container justifyContent="center" spacing={1}>
         <Grid item md={12} sm={12} xs={12} flexDirection="column">
-          <Paper className={styles.paper}>
+          <Paper className={styles.paper} elevation={6} >
             <Box
               sx={{
                 width: "100%",
@@ -78,30 +78,13 @@ const WorksSummary = (props) => {
               </Button>
               <Box color="text.primary"></Box>
             </Box>
-            <Text color="text.primary" variant="body1">
+            <Text gutterBottom color="text.primary" variant="body1">
               {props.description}
             </Text>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            
               <Text paragraph>{props.description2}</Text>
-            </Collapse>
-            <IconButton
-              disableFocusRipple
-              disableRipple
-              sx={{ margin: "auto 0 0 auto" }}
-              expand={expanded}
-              onClick={handleExpandClick}
-              aria-label="show more"
-            >
-              {expanded ? (
-                <>
-                  <Typography>Less</Typography> <ExpandLessIcon />
-                </>
-              ) : (
-                <>
-                  <Typography>More</Typography> <ExpandMoreIcon />
-                </>
-              )}
-            </IconButton>
+           
+            
             <Utilities
               first={props.first}
               second={props.second}

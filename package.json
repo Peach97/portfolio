@@ -19,6 +19,7 @@
     "@mui/material": "^5.9.2",
     "@react-three/drei": "^9.19.6",
     "@react-three/fiber": "^8.3.0",
+    "file-saver": "^2.0.5",
     "framer-motion": "^6.5.1",
     "framer-motion-3d": "^7.0.0",
     "gsap": "^3.11.0",

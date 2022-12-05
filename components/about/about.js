@@ -13,16 +13,14 @@ const AboutCard = () => {
           className={styles.aboutPaper}
           sx={
             !matches
-              ? { color: "text.primary", bgcolor: "background.transparent" }
+              ? { color: "text.primary", bgcolor: "background.default" }
               : { color: "text.primary", bgcolor: "background.default" }
           }
           elevation={4}
         >
-          <Typography variant="subtitle" className={styles.aboutText}>
-            I’m a web developer that designs, builds, and deploys standout web
-            applications. My passion for learning, coupled with numerous
-            freelance projects, has given me practical experience with many
-            powerful web tools.
+          <Typography variant="body1" className={styles.aboutText}>
+            Hi 👋 I'm Cameron! I am currently looking for beginner full-stack developer positions. While I specialize in front-end development in React, my freelance work has given me experience with many powerful libraries, concepts, and tools. From wireframes to CI/CD, I relish the opportunity to bring digital product ideas to life. Eternally curious, I am quick to learn and apply any modern technologies that will improve a user’s experience on the web.
+            Offline, I spend my time lifting weights, reading, or creating 3D Blender models - like the ones in this application!
           </Typography>
           <Box className={styles.skillsBox}>
             <Divider sx={{ width: "100%", marginTop: "2.5rem" }} />

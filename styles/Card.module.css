@@ -81,7 +81,7 @@
     justify-content: center;
     background-color: transparent;
     margin-left: auto;
-    width: 35vw;
+    width: 45vw;
     height: fit-content;
 
 }
@@ -120,7 +120,7 @@
     margin: 0;
     display: flex;
     position: relative;
-    height: 87.675rem;
+    height: 90rem;
     padding: 1rem 1rem 0rem 1rem;
     width: 100%;
     flex-direction: column;
