@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { TextField, Box, Button, Grid } from "@mui/material";
+import emailjs from "@emailjs/browser";
+import AlertDialog from "./confirmation";
 
 const Form = () => {
+  const [open, setOpen] = useState(false);
+  //state for submission notification
+  const form = useRef();
+  //referencing form current values
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
+        `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
+        form.current,
+        `${process.env.NEXT_PUBLIC_KEY}`
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    setOpen(true);
+    e.target.reset();
+  };
+  //email form submission handler
   return (
     <Box sx={{ width: "100%%", height: "fit-content", display: "flex" }}>
-      <form style={{ zIndex: "5" }}>
+      <form ref={form} style={{ zIndex: "5" }} onSubmit={sendEmail}>
         <Grid
           container
           alignItems="center"
@@ -72,6 +99,7 @@ const Form = () => {
           Send Message
         </Button>
       </form>
+      <AlertDialog setOpen={setOpen} open={open} />
     </Box>
   );
 };
