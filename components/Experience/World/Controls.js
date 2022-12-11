@@ -166,7 +166,7 @@ export default class Controls {
           "same"
         )
         .to(this.room.scale, { x: 1.65, y: 1.237, z: 1.65 }, "same")
-        .to(this.floor.position, { y: -205 }, "same");
+        .to(this.floor.position, { y: -225 }, "same");
       //Fourth Move
       this.fourthMoveTimeline = new gsap.timeline({
         scrollTrigger: {
@@ -342,89 +342,89 @@ export default class Controls {
           "same"
         );
     });
-    mm.add("all", () => {
-      //First move (all)
-      this.firstCircle = new gsap.timeline({
-        scrollTrigger: {
-          trigger: ".first-move",
-          start: "top top",
-          end: "+=3100",
-          scrub: 0.6,
-        },
-      }).to(this.circleFirst.scale, {
-        x: 4,
-        y: 4,
-        z: 4,
-      });
-      //Second move (all)
-      this.secondCircle = new gsap.timeline({
-        scrollTrigger: {
-          trigger: ".third-move",
-          start: "top top",
-          end: "+=3000",
-          scrub: 0.6,
-        },
-      })
-        .to(
-          this.circleSecond.scale,
-          {
-            x: 6,
-            y: 6,
-            z: 6,
-          },
-          "same"
-        )
-        .to(
-          this.circleSecond.rotation,
-          {
-            x: -Math.PI / 2.75,
-          },
-          "same"
-        )
-        .to(
-          this.circleFirst.rotation,
-          {
-            x: -Math.PI / 2.75,
-          },
-          "same"
-        )
-        .to(this.circleFirst.position, { y: -375 }, "same")
-        .to(this.circleSecond.position, { y: -342 }, "same");
-      //Third move (all)
-      this.thirdCircle = new gsap.timeline({
-        scrollTrigger: {
-          trigger: ".fourth-move",
-          start: "top top",
-          end: "+=3200",
-          scrub: 0.6,
-        },
-      })
-        .to(
-          this.circleFirst.rotation,
-          {
-            x: -Math.PI / 1.5,
-          },
-          "same"
-        )
-        .to(
-          this.circleSecond.rotation,
-          {
-            x: -Math.PI / 1.5,
-          },
-          "same"
-        )
-        .to(
-          this.circleThird.rotation,
-          {
-            x: -Math.PI / 1.5,
-          },
-          "same"
-        )
-        .to(this.circleThird.scale, { x: 6, y: 6, z: 6 }, "same")
-        .to(this.circleFirst.position, { y: -700 }, "same")
-        .to(this.circleSecond.position, { y: -650 }, "same")
-        .to(this.circleThird.position, { y: -535 }, "same");
-    });
+    // mm.add("all", () => {
+    //   //First move (all)
+    //   this.firstCircle = new gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: ".first-move",
+    //       start: "top top",
+    //       end: "+=3100",
+    //       scrub: 0.6,
+    //     },
+    //   }).to(this.circleFirst.scale, {
+    //     x: 4,
+    //     y: 4,
+    //     z: 4,
+    //   });
+    //   //Second move (all)
+    //   this.secondCircle = new gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: ".third-move",
+    //       start: "top top",
+    //       end: "+=3000",
+    //       scrub: 0.6,
+    //     },
+    //   })
+    //     .to(
+    //       this.circleSecond.scale,
+    //       {
+    //         x: 6,
+    //         y: 6,
+    //         z: 6,
+    //       },
+    //       "same"
+    //     )
+    //     .to(
+    //       this.circleSecond.rotation,
+    //       {
+    //         x: -Math.PI / 2.75,
+    //       },
+    //       "same"
+    //     )
+    //     .to(
+    //       this.circleFirst.rotation,
+    //       {
+    //         x: -Math.PI / 2.75,
+    //       },
+    //       "same"
+    //     )
+    //     .to(this.circleFirst.position, { y: -375 }, "same")
+    //     .to(this.circleSecond.position, { y: -342 }, "same");
+    //   //Third move (all)
+    //   this.thirdCircle = new gsap.timeline({
+    //     scrollTrigger: {
+    //       trigger: ".fourth-move",
+    //       start: "top top",
+    //       end: "+=3200",
+    //       scrub: 0.6,
+    //     },
+    //   })
+    //     .to(
+    //       this.circleFirst.rotation,
+    //       {
+    //         x: -Math.PI / 1.5,
+    //       },
+    //       "same"
+    //     )
+    //     .to(
+    //       this.circleSecond.rotation,
+    //       {
+    //         x: -Math.PI / 1.5,
+    //       },
+    //       "same"
+    //     )
+    //     .to(
+    //       this.circleThird.rotation,
+    //       {
+    //         x: -Math.PI / 1.5,
+    //       },
+    //       "same"
+    //     )
+    //     .to(this.circleThird.scale, { x: 6, y: 6, z: 6 }, "same")
+    //     .to(this.circleFirst.position, { y: -700 }, "same")
+    //     .to(this.circleSecond.position, { y: -650 }, "same")
+    //     .to(this.circleThird.position, { y: -535 }, "same");
+    // });
   }
 
   resize() {}
