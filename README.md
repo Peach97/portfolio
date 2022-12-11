@@ -4,7 +4,7 @@
 <br />
 
 <div align="center">
-    <img src="https://user-images.githubusercontent.com/90569344/180589664-3706cdc3-4029-4df7-a3cc-57834c4a19e9.jpeg" height="100" width="300"/>
+    <img src="public/favicon.png" height="100" width="300"/>
 
   </div>
 <h3 align="center">Cam Petrie Portfolio Website</h3>
