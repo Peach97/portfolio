@@ -4,7 +4,7 @@
 <br />
 
 <div align="center">
-    <img src="public/favicon.png" height="100" width="300"/>
+    <img src="public/favicon.png" height="300" width="300"/>
 
   </div>
 <h3 align="center">Cam Petrie Portfolio Website</h3>
