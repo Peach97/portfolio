@@ -20,6 +20,7 @@ const Form = () => {
       .then(
         (result) => {
           console.log(result.text);
+          console.log("👋 Thanks for visiting" );
         },
         (error) => {
           console.log(error.text);
