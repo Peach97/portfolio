@@ -70,7 +70,7 @@ export default function HeroSection({ toggle, path }) {
               className="hero-main-title"
               fontWeight={400}
             >
-              I do full stack development, design, and 3D modeling.
+              I do full stack development, data analysis, and 3D modeling.
             </Typography>
           </Box>
         </div>
