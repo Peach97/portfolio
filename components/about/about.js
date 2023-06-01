@@ -19,12 +19,12 @@ const AboutCard = () => {
           elevation={4}
         >
           <Typography variant="body1" className={styles.aboutText}>
-            Hi 👋 I&apos;m Cameron! I am currently looking for beginner
-            full-stack developer positions. While I specialize in front-end
-            development in React, my freelance work has given me experience with
+            Hi 👋 I&apos;m Cameron! My freelance work has given me experience with
             many powerful libraries, concepts, and tools. From wireframes to
             CI/CD, I relish the opportunity to bring digital product ideas to
-            life. Eternally curious, I am quick to learn and apply any modern
+            life. As an undergrad in Economics, I also gained a strong understanding of data analytics. 
+            This included data-driven decision making and market research. 
+            Eternally curious, I am quick to learn and apply any modern
             technologies that will improve a user’s experience on the web.
             Offline, I spend my time lifting weights, reading, or creating 3D
             Blender models - like the ones in this application!
